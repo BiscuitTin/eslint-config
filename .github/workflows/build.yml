@@ -1,0 +1,62 @@
+name: Build & Commit Message Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build all packages & Check commit messages
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: 'tree:0'
+          fetch-depth: '0'
+
+      - name: Setup target Node.js to enable Corepack
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm typegen
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm test
+
+      - run: git branch --track main origin/main
+        if: ${{ github.event_name == 'pull_request' }}
+
+      - name: Validate current commit (last commit) with commitlint
+        if: github.event_name == 'push' && github.actor != 'dependabot[bot]'
+        run: pnpm exec commitlint --last --verbose
+
+      - name: Validate pull request commits with commitlint
+        if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+        run: pnpm exec commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Validate pull request title with commitlint
+        if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+        run: echo "${{ github.event.pull_request.title }}" | pnpm exec commitlint --verbose

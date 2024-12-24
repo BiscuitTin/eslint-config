@@ -1,1 +1,1 @@
-# project-template
+# BiscuitTin ESLint Config
