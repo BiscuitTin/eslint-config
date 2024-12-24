@@ -1,0 +1,64 @@
+{
+  "name": "@bttin/eslint-plugin-format",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Format various languages with formatters in ESLint, a fork of Antfu's, with support for configuration files.",
+  "author": "Biscuit Tin <opensource@biscuitt.in>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BiscuitTin/eslint-config.git",
+    "directory": "packages/eslint-plugin-format"
+  },
+  "bugs": "https://github.com/BiscuitTin/eslint-config/issues",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "formatters",
+    "prettier",
+    "dprint"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts",
+    "./workers/dprint": "./src/workers/dprint.js",
+    "./workers/prettier": "./src/workers/prettier.js",
+    "./define-config-support": "./src/define-config-support.ts",
+    "./rule-options": "./src/rule-options.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prepublish": "jiek build && jiek",
+    "postpublish": "jiek"
+  },
+  "peerDependencies": {
+    "@dprint/formatter": "^0.4.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": false
+    },
+    "prettier": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "eslint-formatting-reporter": "^0.0.0",
+    "eslint-parser-plain": "^0.1.0",
+    "find-up-simple": "^1.0.0",
+    "local-pkg": "^0.5.1",
+    "micro-memoize": "^4.1.2",
+    "synckit": "^0.9.2",
+    "valibot": "1.0.0-beta.9"
+  },
+  "devDependencies": {
+    "@dprint/formatter": "^0.4.1",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2"
+  }
+}

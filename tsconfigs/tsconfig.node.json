@@ -1,0 +1,23 @@
+{
+  "extends": ["./tsconfig.base.json"],
+  "compilerOptions": {
+    "composite": true,
+    "target": "ESNext",
+    "customConditions": ["node"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "references": [{ "path": "./tsconfig.default.json" }],
+  "include": [
+    "../eslint.config.ts",
+    "../vitest.config.ts",
+    "../vitest.workspace.ts",
+    "../scripts/**/*.ts",
+    "../packages/*/src/**/*.node.ts",
+    "../packages/eslint-config/src",
+    "../packages/eslint-config/eslint-inspector.config.ts",
+    "../packages/eslint-plugin-format/src"
+  ]
+}

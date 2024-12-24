@@ -1,0 +1,35 @@
+version: '0.2'
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - arthurgeron
+  - bttin
+  - callees
+  - cjsx
+  - commitlint
+  - dprint
+  - eslintcache
+  - esno
+  - gplane
+  - hasown
+  - Intelli
+  - jiek
+  - malva
+  - micromark
+  - mjsx
+  - multilines
+  - nolyfill
+  - nonconstructor
+  - postc
+  - postpublish
+  - proptypes
+  - sukka
+  - Syncify
+  - textnodes
+  - tsconfigs
+  - typegen
+  - Vali
+  - valibot
+ignoreWords: []
+import: []
