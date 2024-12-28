@@ -17,7 +17,7 @@
     "yarn": ">=999.0.0"
   },
   "scripts": {
-    "build": "jiek build --filter @bttin/*",
+    "build": "jiek build --noMin --filter @bttin/*",
     "test": "vitest --run --logHeapUsage",
     "coverage": "vitest run --coverage",
     "typegen": "tsx scripts/typegen.ts",
