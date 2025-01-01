@@ -85,4 +85,5 @@ Thanks to the existing works for references and inspiration.
 [MIT](./LICENSE) License
 
 Copyright (c) 2022 Anthony Fu <https://github.com/antfu>
+<br />
 Copyright (c) 2024-present Biscuit Tin <opensource@biscuitt.in>

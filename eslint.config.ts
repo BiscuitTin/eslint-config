@@ -32,6 +32,7 @@ export default config(
     files: [
       'packages/eslint-config/src/utils/get-package-json.ts',
       'packages/eslint-config/src/utils/load-local-file.ts',
+      'packages/eslint-parser-plain/src/index.ts',
     ],
     rules: {
       'unicorn/no-null': 'off',

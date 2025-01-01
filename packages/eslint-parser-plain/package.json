@@ -1,0 +1,41 @@
+{
+  "name": "@bttin/eslint-parser-plain",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Parse various types of files with ESLint, a fork of Ray's (@so1ve).",
+  "author": "Biscuit Tin <opensource@biscuitt.in>",
+  "license": "MIT",
+  "homepage": "https://github.com/BiscuitTin/eslint-config/tree/main/packages/eslint-parser-plain#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BiscuitTin/eslint-config.git",
+    "directory": "packages/eslint-parser-plain"
+  },
+  "bugs": "https://github.com/BiscuitTin/eslint-config/issues",
+  "keywords": [
+    "eslint",
+    "eslint-parser"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "jiek build && jiek",
+    "postpublish": "jiek"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0"
+  }
+}
