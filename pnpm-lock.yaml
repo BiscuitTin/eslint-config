@@ -193,18 +193,15 @@ importers:
 
   packages/eslint-plugin-format:
     dependencies:
+      '@bttin/eslint-parser-plain':
+        specifier: workspace:^
+        version: link:../eslint-parser-plain
       eslint-formatting-reporter:
         specifier: ^0.0.0
         version: 0.0.0(eslint@9.17.0(jiti@2.4.2))
-      eslint-parser-plain:
-        specifier: ^0.1.0
-        version: 0.1.0
       find-up-simple:
         specifier: ^1.0.0
         version: 1.0.0
-      local-pkg:
-        specifier: ^0.5.1
-        version: 0.5.1
       micro-memoize:
         specifier: ^4.1.2
         version: 4.1.2
