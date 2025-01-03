@@ -8,23 +8,29 @@
   "homepage": "https://github.com/BiscuitTin/eslint-config/tree/main/packages/eslint-parser-plain#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BiscuitTin/eslint-config.git",
+    "url": "git+https://github.com/BiscuitTin/eslint-config.git",
     "directory": "packages/eslint-parser-plain"
   },
   "bugs": "https://github.com/BiscuitTin/eslint-config/issues",
   "keywords": [
     "eslint",
-    "eslint-parser"
+    "eslint-parser",
+    "eslint-parser-plain"
   ],
   "exports": {
     "./package.json": "./package.json",
     ".": "./src/index.ts"
   },
   "files": [
+    "LICENSE",
+    "README.md",
     "dist"
   ],
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
-    "prepublish": "jiek build && jiek",
+    "prepublish": "jiek build --noMin && jiek",
     "postpublish": "jiek"
   },
   "peerDependencies": {

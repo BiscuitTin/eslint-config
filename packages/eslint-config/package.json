@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BiscuitTin/eslint-config.git",
+    "url": "git+https://github.com/BiscuitTin/eslint-config.git",
     "directory": "packages/eslint-config"
   },
   "bugs": "https://github.com/BiscuitTin/eslint-config/issues",
@@ -16,13 +16,17 @@
     ".": "./src/index.ts"
   },
   "files": [
-    "dist",
-    "src"
+    "LICENSE",
+    "README.md",
+    "dist"
   ],
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
     "build:inspector": "eslint-config-inspector build --config eslint-inspector.config.ts",
     "dev": "eslint-config-inspector --config eslint-inspector.config.ts",
-    "prepublish": "jiek build && jiek",
+    "prepublish": "jiek build --noMin && jiek",
     "postpublish": "jiek"
   },
   "peerDependencies": {

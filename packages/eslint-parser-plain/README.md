@@ -2,6 +2,8 @@
 
 Allow you to parse various types of files with ESLint, a fork of [Ray's](https://github.com/so1ve/eslint-parser-plain) ([@so1ve](https://github.com/so1ve)).
 
+The difference from the original package is that this package fixes [issues with ESLint errors in specific cases caused by missing meta data](https://github.com/so1ve/eslint-parser-plain/pull/79).
+
 ## Usages
 
 ### Install
@@ -22,34 +24,34 @@ pnpm add -D @biscuittin/eslint-parser-plain
 
 We recommend using [ESLint's Flat Config format](https://eslint.org/docs/latest/use/configure/configuration-files-new).
 
-```typescript
-import parserPlain from "@biscuittin/eslint-parser-plain"
+```javascript
+import parserPlain from '@biscuittin/eslint-parser-plain'
 
 export default [
   {
-    files: ["*.md"],
+    files: ['*.md'],
     parser: parserPlain,
     rules: {
-      "prettier/prettier": ["error", { parser: "markdown" }],
+      'prettier/prettier': ['error', { parser: 'markdown' }],
     },
   },
-];
+]
 ```
 
 Or legacy config format:
 
-```typescript
+```javascript
 module.exports = {
   overrides: [
     {
-      files: ["*.md"],
-      parser: "eslint-parser-plain",
+      files: ['*.md'],
+      parser: 'eslint-parser-plain',
       rules: {
-        "prettier/prettier": ["error", { parser: "markdown" }],
+        'prettier/prettier': ['error', { parser: 'markdown' }],
       },
     },
   ],
-};
+}
 ```
 
 ## Credits

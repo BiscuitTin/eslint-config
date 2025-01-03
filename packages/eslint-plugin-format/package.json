@@ -5,9 +5,10 @@
   "description": "Format various languages with formatters in ESLint, a fork of Antfu's, with support for configuration files.",
   "author": "Biscuit Tin <opensource@biscuitt.in>",
   "license": "MIT",
+  "homepage": "https://github.com/BiscuitTin/eslint-config/tree/main/packages/eslint-plugin-format#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BiscuitTin/eslint-config.git",
+    "url": "git+https://github.com/BiscuitTin/eslint-config.git",
     "directory": "packages/eslint-plugin-format"
   },
   "bugs": "https://github.com/BiscuitTin/eslint-config/issues",
@@ -27,11 +28,15 @@
     "./rule-options": "./src/rule-options.ts"
   },
   "files": [
-    "dist",
-    "src"
+    "LICENSE",
+    "README.md",
+    "dist"
   ],
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
-    "prepublish": "jiek build && jiek",
+    "prepublish": "jiek build --noMin && jiek",
     "postpublish": "jiek"
   },
   "peerDependencies": {
