@@ -41,7 +41,7 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
     reactTypeCheck = false,
   } = options
 
-  const files = [
+  const files: string[] = [
     GLOB_TS,
     GLOB_TSX,
     ...extraFileExtensions.map((extension) => `**/*${extension}`),

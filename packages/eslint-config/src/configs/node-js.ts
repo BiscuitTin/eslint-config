@@ -13,7 +13,7 @@ const isModule = getPackageJson()?.type === 'module'
 export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
   const { module = isModule, extraFiles = [] } = options
 
-  const files = [GLOB_JS, ...extraFiles]
+  const files: string[] = [GLOB_JS, ...extraFiles]
 
   return [
     {
