@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.2...eslint-parser-plain-v0.0.3) (2025-01-03)
+
+
+### Features
+
+* generate provenance statements for publish ([#17](https://github.com/BiscuitTin/eslint-config/issues/17)) ([8b4454c](https://github.com/BiscuitTin/eslint-config/commit/8b4454c1e3cc453b080d1a855a384dc5557e3268))
+
 ## [0.0.2](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.1...eslint-parser-plain-v0.0.2) (2025-01-03)
 
 
