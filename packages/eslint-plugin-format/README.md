@@ -1,4 +1,4 @@
-# @bttin/eslint-plugin-format
+# @biscuittin/eslint-plugin-format
 
 Format various languages with formatters in ESLint. Supports [Prettier](https://prettier.io/) and [dprint](https://dprint.dev/).
 

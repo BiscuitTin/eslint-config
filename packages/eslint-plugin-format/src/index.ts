@@ -1,6 +1,6 @@
 import type { ESLint, Linter } from 'eslint'
 
-import parserPlain from '@bttin/eslint-parser-plain'
+import parserPlain from '@biscuittin/eslint-parser-plain'
 
 import packagePlugin from '../package.json'
 import dprint from './rules/dprint.js'

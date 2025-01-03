@@ -1,4 +1,4 @@
-import config from '@bttin/eslint-config'
+import config from '@biscuittin/eslint-config'
 
 export default config(
   {

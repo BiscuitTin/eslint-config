@@ -1,4 +1,4 @@
-import { parseForESLint } from '@bttin/eslint-parser-plain'
+import { parseForESLint } from '@biscuittin/eslint-parser-plain'
 import { describe, expect, it } from 'vitest'
 
 describe('should', () => {
