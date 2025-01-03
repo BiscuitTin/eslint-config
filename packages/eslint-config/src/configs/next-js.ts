@@ -8,7 +8,7 @@ import plugins from '../plugins.js'
 import { getFlatConfigName } from '../utils/index.js'
 
 const name = getFlatConfigName('next-js')
-const files = [GLOB_SRC]
+const files: string[] = [GLOB_SRC]
 
 export function nextJs(): TypedFlatConfigItem[] {
   return [

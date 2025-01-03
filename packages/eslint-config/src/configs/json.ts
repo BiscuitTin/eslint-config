@@ -27,7 +27,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
     ? stylistic
     : ({ indentWidth: 2 } as const)
 
-  const files = [GLOB_JSON, GLOB_JSON5, GLOB_JSONC, ...extraFiles]
+  const files: string[] = [GLOB_JSON, GLOB_JSON5, GLOB_JSONC, ...extraFiles]
 
   return [
     {

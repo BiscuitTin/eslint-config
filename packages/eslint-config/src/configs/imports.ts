@@ -4,10 +4,12 @@ import process from 'node:process'
 import type { OptionsTypeScript } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
+import { GLOB_SRC } from '../globs.js'
 import plugins from '../plugins.js'
 import { getFlatConfigName } from '../utils/index.js'
 
 const name = getFlatConfigName('imports')
+const files: string[] = [GLOB_SRC]
 
 export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] {
   const {
@@ -17,6 +19,7 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
   return [
     {
       name: name.setup,
+      files,
       plugins: {
         'import-x': plugins['pluginImportX'],
         'unused-imports': plugins['pluginUnusedImports'],
@@ -30,6 +33,7 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
     },
     {
       name: name.rules,
+      files,
       rules: {
         // eslint-plugin-import-x
         // https://github.com/un-ts/eslint-plugin-import-x
@@ -59,6 +63,7 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
     },
     {
       name: name.stylistic,
+      files,
       rules: {
         // rules that conflict with eslint-plugin-perfectionist are disabled.
         'sort-imports': 'off',

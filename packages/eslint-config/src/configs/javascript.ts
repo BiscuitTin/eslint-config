@@ -6,10 +6,12 @@ import globals from 'globals'
 import type { OptionsJavaScript } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
+import { GLOB_SRC } from '../globs.js'
 import plugins from '../plugins.js'
 import { getFlatConfigName } from '../utils/index.js'
 
 const name = getFlatConfigName('javascript')
+const files: string[] = [GLOB_SRC]
 
 const commonjsGlobalsOffList = Object.keys(globals.commonjs).map<
   Record<string, Linter.GlobalConf>
@@ -27,6 +29,7 @@ export function javascript(options: OptionsJavaScript = {}): TypedFlatConfigItem
   return [
     {
       name: name.setup,
+      files,
       plugins: {
         'import-x': plugins['pluginImportX'],
         'unused-imports': plugins['pluginUnusedImports'],
@@ -80,6 +83,7 @@ export function javascript(options: OptionsJavaScript = {}): TypedFlatConfigItem
     },
     {
       name: name.rules,
+      files,
       rules: {
         ...js.configs.recommended.rules,
 
