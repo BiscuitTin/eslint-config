@@ -1,5 +1,5 @@
 {
-  "name": "@bttin/eslint-parser-plain",
+  "name": "@biscuittin/eslint-parser-plain",
   "type": "module",
   "version": "0.0.1",
   "description": "Parse various types of files with ESLint, a fork of Ray's (@so1ve).",

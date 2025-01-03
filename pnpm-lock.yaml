@@ -15,7 +15,7 @@ importers:
 
   .:
     devDependencies:
-      '@bttin/eslint-config':
+      '@biscuittin/eslint-config':
         specifier: workspace:^
         version: link:packages/eslint-config
       '@commitlint/cli':
@@ -193,7 +193,7 @@ importers:
 
   packages/eslint-plugin-format:
     dependencies:
-      '@bttin/eslint-parser-plain':
+      '@biscuittin/eslint-parser-plain':
         specifier: workspace:^
         version: link:../eslint-parser-plain
       eslint-formatting-reporter:

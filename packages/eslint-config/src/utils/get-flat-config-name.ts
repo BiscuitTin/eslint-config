@@ -1,11 +1,11 @@
 export function getFlatConfigName<T extends string>(module: T) {
   return {
-    base: `@bttin/eslint-config/${module}`,
-    setup: `@bttin/eslint-config/${module}/setup`,
-    rules: `@bttin/eslint-config/${module}/rules`,
-    stylistic: `@bttin/eslint-config/${module}/stylistic`,
-    commonjs: `@bttin/eslint-config/${module}/commonjs`,
-    module: `@bttin/eslint-config/${module}/module`,
-    script: `@bttin/eslint-config/${module}/script`,
+    base: `@biscuittin/eslint-config/${module}`,
+    setup: `@biscuittin/eslint-config/${module}/setup`,
+    rules: `@biscuittin/eslint-config/${module}/rules`,
+    stylistic: `@biscuittin/eslint-config/${module}/stylistic`,
+    commonjs: `@biscuittin/eslint-config/${module}/commonjs`,
+    module: `@biscuittin/eslint-config/${module}/module`,
+    script: `@biscuittin/eslint-config/${module}/script`,
   } as const
 }

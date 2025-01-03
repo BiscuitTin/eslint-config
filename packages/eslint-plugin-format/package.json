@@ -1,5 +1,5 @@
 {
-  "name": "@bttin/eslint-plugin-format",
+  "name": "@biscuittin/eslint-plugin-format",
   "type": "module",
   "version": "0.0.1",
   "description": "Format various languages with formatters in ESLint, a fork of Antfu's, with support for configuration files.",
@@ -48,7 +48,7 @@
     }
   },
   "dependencies": {
-    "@bttin/eslint-parser-plain": "workspace:^",
+    "@biscuittin/eslint-parser-plain": "workspace:^",
     "eslint-formatting-reporter": "^0.0.0",
     "find-up-simple": "^1.0.0",
     "micro-memoize": "^4.1.2",

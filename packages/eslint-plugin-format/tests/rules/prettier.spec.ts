@@ -1,4 +1,4 @@
-import pluginFormat from '@bttin/eslint-plugin-format'
+import pluginFormat from '@biscuittin/eslint-plugin-format'
 import { fileURLToPath } from 'node:url'
 
 import { ruleTester } from '../../../../tools/eslint-rule-tester.js'

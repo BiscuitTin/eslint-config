@@ -1,4 +1,4 @@
-# @bttin/eslint-parser-plain
+# @biscuittin/eslint-parser-plain
 
 Allow you to parse various types of files with ESLint, a fork of [Ray's](https://github.com/so1ve/eslint-parser-plain) ([@so1ve](https://github.com/so1ve)).
 
@@ -7,15 +7,15 @@ Allow you to parse various types of files with ESLint, a fork of [Ray's](https:/
 ### Install
 
 ```bash
-npm install -D @bttin/eslint-parser-plain
+npm install -D @biscuittin/eslint-parser-plain
 ```
 
 ```bash
-yarn add -D @bttin/eslint-parser-plain
+yarn add -D @biscuittin/eslint-parser-plain
 ```
 
 ```bash
-pnpm add -D @bttin/eslint-parser-plain
+pnpm add -D @biscuittin/eslint-parser-plain
 ```
 
 ### Configure
@@ -23,7 +23,7 @@ pnpm add -D @bttin/eslint-parser-plain
 We recommend using [ESLint's Flat Config format](https://eslint.org/docs/latest/use/configure/configuration-files-new).
 
 ```typescript
-import parserPlain from "@bttin/eslint-parser-plain"
+import parserPlain from "@biscuittin/eslint-parser-plain"
 
 export default [
   {

@@ -1,0 +1,67 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          command: manifest-release
+          token: ${{secrets.GITHUB_TOKEN}}
+
+      # The logic below handles the npm publication:
+      - uses: actions/checkout@v4
+        # these if statements ensure that a publication only occurs when
+        # a new release is created:
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - name: Setup target Node.js to enable Corepack
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - name: Enable Corepack
+        run: corepack enable
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+          registry-url: 'https://registry.npmjs.org'
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - run: pnpm install --frozen-lockfile
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - run: pnpm typegen
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - run: pnpm build
+        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
+
+      - run: pnpm exec jiek publish --no-bumper --filter @biscuittin/eslint-config
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{steps.release.outputs['packages/eslint-config--release_created']}}
+
+      - run: pnpm exec jiek publish --no-bumper --filter @biscuittin/eslint-parser-plain
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{steps.release.outputs['packages/eslint-parser-plain--release_created']}}
+
+      - run: pnpm exec jiek publish --no-bumper --filter @biscuittin/eslint-plugin-format
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{steps.release.outputs['packages/eslint-plugin-format--release_created']}}

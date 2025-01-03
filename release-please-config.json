@@ -1,0 +1,20 @@
+{
+  "release-type": "node",
+  "bump-minor-pre-major": true,
+  "bump-patch-for-minor-pre-major": true,
+  "draft": false,
+  "prerelease": true,
+  "separate-pull-requests": true,
+  "packages": {
+    "packages/eslint-config": {
+      "changelog-path": "CHANGELOG.md"
+    },
+    "packages/eslint-parser-plain": {
+      "changelog-path": "CHANGELOG.md"
+    },
+    "packages/eslint-plugin-format": {
+      "changelog-path": "CHANGELOG.md"
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}

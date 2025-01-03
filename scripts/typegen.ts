@@ -23,7 +23,7 @@ import {
   tailwindcss,
   typescript,
   unicorn,
-} from '@bttin/eslint-config'
+} from '@biscuittin/eslint-config'
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
 import fs from 'node:fs/promises'
