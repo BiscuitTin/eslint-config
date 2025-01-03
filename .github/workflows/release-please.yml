@@ -48,9 +48,6 @@ jobs:
       - run: pnpm typegen
         if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
 
-      - run: pnpm build
-        if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
-
       - run: pnpm exec jiek publish --no-bumper --filter @biscuittin/eslint-config
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

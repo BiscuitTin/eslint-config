@@ -130,6 +130,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
               'engines',
               'activationEvents',
               'contributes',
+              'publishConfig',
               'scripts',
               'peerDependencies',
               'peerDependenciesMeta',
