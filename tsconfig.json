@@ -7,5 +7,8 @@
     { "path": "./tsconfigs/tsconfig.node.json" },
     { "path": "./tsconfigs/tsconfig.node.spec.json" }
   ],
-  "files": []
+  "files": [
+    "./packages/eslint-plugin-format/src/workers/dprint.js",
+    "./packages/eslint-plugin-format/src/workers/prettier.js"
+  ]
 }
