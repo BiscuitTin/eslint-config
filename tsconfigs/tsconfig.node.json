@@ -7,7 +7,8 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+    "allowJs": true
   },
   "references": [{ "path": "./tsconfig.default.json" }],
   "include": [
@@ -19,6 +20,8 @@
     "../packages/eslint-config/src",
     "../packages/eslint-config/eslint-inspector.config.ts",
     "../packages/eslint-parser-plain/src",
-    "../packages/eslint-plugin-format/src"
+    "../packages/eslint-plugin-format/src",
+    "../packages/eslint-plugin-format/src/workers/dprint.js",
+    "../packages/eslint-plugin-format/src/workers/prettier.js"
   ]
 }
