@@ -201,8 +201,8 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
           // https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
           // pluginReact.configs.['recommended-typescript'].rules
           '@eslint-react/dom/no-unknown-property': 'off',
-          '@eslint-react/jsx-no-duplicate-props': 'off',
-          '@eslint-react/jsx-uses-vars': 'off',
+          '@eslint-react/no-duplicate-jsx-props': 'off',
+          '@eslint-react/use-jsx-vars': 'off',
 
           // pluginReact.configs.['recommended-type-checked'].rules
           // https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
