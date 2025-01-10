@@ -83,7 +83,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         // https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
         ...pluginReact.configs.recommended.rules,
         '@eslint-react/ensure-forward-ref-using-ref': 'error',
-        '@eslint-react/jsx-no-duplicate-props': 'error',
+        '@eslint-react/no-duplicate-jsx-props': 'error',
         '@eslint-react/no-children-count': 'error',
         '@eslint-react/no-children-for-each': 'error',
         '@eslint-react/no-children-only': 'error',
@@ -93,7 +93,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         '@eslint-react/no-implicit-key': 'error',
         '@eslint-react/no-missing-component-display-name': 'error',
         '@eslint-react/no-unstable-context-value': 'error',
-        '@eslint-react/dom/no-children-in-void-dom-elements': 'error',
+        '@eslint-react/dom/no-void-elements-with-children': 'error',
         // Update as of 2021: All current versions of major browsers now automatically use the
         // behavior of rel="noopener" for any target="_blank" link, nullifying this issue.
         // See: https://chromestatus.com/feature/6140064063029248.
@@ -103,6 +103,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         '@eslint-react/web-api/no-leaked-resize-observer': 'error',
         '@eslint-react/web-api/no-leaked-timeout': 'error',
         '@eslint-react/hooks-extra/no-unnecessary-use-memo': 'error',
+        '@eslint-react/hooks-extra/no-useless-custom-hooks': 'error',
         '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'error',
         '@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect': 'error',
       },
