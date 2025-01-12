@@ -20,8 +20,6 @@
     "../packages/eslint-config/src",
     "../packages/eslint-config/eslint-inspector.config.ts",
     "../packages/eslint-parser-plain/src",
-    "../packages/eslint-plugin-format/src",
-    "../packages/eslint-plugin-format/src/workers/dprint.js",
-    "../packages/eslint-plugin-format/src/workers/prettier.js"
+    "../packages/eslint-plugin-format/src"
   ]
 }

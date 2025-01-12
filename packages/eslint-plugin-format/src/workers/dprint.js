@@ -1,3 +1,1 @@
-const a = 42
-
-export default a
+console.log('dprint worker')

@@ -1,6 +1,5 @@
+import type { ConfigNames, RuleOptions } from '#typegen'
 import type { Linter } from 'eslint'
-
-import type { ConfigNames, RuleOptions } from './typegen.d.ts'
 
 /**
  * Copied from antfu/eslint-config
