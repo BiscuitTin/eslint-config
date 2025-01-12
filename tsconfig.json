@@ -6,5 +6,6 @@
     { "path": "./tsconfigs/tsconfig.browser.spec.json" },
     { "path": "./tsconfigs/tsconfig.node.json" },
     { "path": "./tsconfigs/tsconfig.node.spec.json" }
-  ]
+  ],
+  "files": []
 }
