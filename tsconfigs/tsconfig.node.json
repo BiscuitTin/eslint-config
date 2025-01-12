@@ -7,7 +7,9 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+    "allowJs": true,
+    "outDir": "./dist"
   },
   "references": [{ "path": "./tsconfig.default.json" }],
   "include": [

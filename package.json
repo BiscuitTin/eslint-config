@@ -21,7 +21,7 @@
     "test": "vitest --run --logHeapUsage",
     "coverage": "vitest run --coverage",
     "typegen": "tsx scripts/typegen.ts",
-    "lint": "eslint --cache --flag unstable_ts_config .",
+    "lint": "eslint --cache .",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -33,11 +33,11 @@
     "@types/node": "^22.10.5",
     "@vitest/coverage-v8": "^2.1.8",
     "dprint": "^0.48.0",
-    "eslint": "^9.17.0",
+    "eslint": "^9.18.0",
     "eslint-typegen": "^1.0.0",
     "happy-dom": "^16.5.3",
     "husky": "^9.1.7",
-    "jiek": "2.2.7",
+    "jiek": "^2.3.3",
     "jiti": "^2.4.2",
     "lint-staged": "^15.3.0",
     "tsx": "^4.19.2",
@@ -46,8 +46,6 @@
   },
   "pnpm": {
     "overrides": {
-      "@jiek/pkger": "npm:@jiek/pkger@0.2.1",
-      "@jiek/rollup-plugin-dts": "npm:@jiek/rollup-plugin-dts@6.2.2",
       "deep-equal": "npm:@nolyfill/deep-equal@^1",
       "is-core-module": "npm:@nolyfill/is-core-module@^1",
       "is-generator-function": "npm:@nolyfill/is-generator-function@^1",

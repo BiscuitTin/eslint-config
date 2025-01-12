@@ -62,4 +62,4 @@ dts += `
 export type ConfigNames = ${configNames.map((index) => `'${index}'`).join(' | ')}
 `
 
-await fs.writeFile('packages/eslint-config/src/typegen.d.ts', dts)
+await fs.writeFile('packages/eslint-config/typegen.d.ts', dts)

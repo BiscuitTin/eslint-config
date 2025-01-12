@@ -15,10 +15,14 @@
     "./package.json": "./package.json",
     ".": "./src/index.ts"
   },
+  "imports": {
+    "#typegen": "./typegen.d.ts"
+  },
   "files": [
     "LICENSE",
     "README.md",
-    "dist"
+    "dist",
+    "typegen.d.ts"
   ],
   "publishConfig": {
     "provenance": true
