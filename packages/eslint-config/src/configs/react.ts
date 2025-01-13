@@ -93,15 +93,20 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         '@eslint-react/no-implicit-key': 'error',
         '@eslint-react/no-missing-component-display-name': 'error',
         '@eslint-react/no-unstable-context-value': 'error',
-        '@eslint-react/dom/no-void-elements-with-children': 'error',
+
         // Update as of 2021: All current versions of major browsers now automatically use the
         // behavior of rel="noopener" for any target="_blank" link, nullifying this issue.
         // See: https://chromestatus.com/feature/6140064063029248.
         // See: https://stackoverflow.com/a/50709724
         '@eslint-react/dom/no-unsafe-target-blank': 'off',
+        '@eslint-react/dom/no-void-elements-with-children': 'error',
+
+        '@eslint-react/web-api/no-leaked-event-listener': 'error',
         '@eslint-react/web-api/no-leaked-interval': 'error',
         '@eslint-react/web-api/no-leaked-resize-observer': 'error',
         '@eslint-react/web-api/no-leaked-timeout': 'error',
+
+        '@eslint-react/hooks-extra/no-unnecessary-use-callback': 'error',
         '@eslint-react/hooks-extra/no-unnecessary-use-memo': 'error',
         '@eslint-react/hooks-extra/no-useless-custom-hooks': 'error',
         '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'error',
