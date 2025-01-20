@@ -83,7 +83,7 @@
     "typescript-eslint": "^8.18.1"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^0.7.1",
+    "@eslint/config-inspector": "^1.0.0",
     "@types/eslint-plugin-react-refresh": "^0.4.0",
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@typescript-eslint/parser": "^8.18.1",
