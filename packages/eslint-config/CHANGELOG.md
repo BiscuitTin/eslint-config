@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.3](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.2...eslint-config-v0.0.3) (2025-01-25)
+
+
+### Features
+
+* add no-leaked-event-listener and no-unnecessary-use-callback rules ([#28](https://github.com/BiscuitTin/eslint-config/issues/28)) ([3bce3c0](https://github.com/BiscuitTin/eslint-config/commit/3bce3c0871b6dc922d7a8e43390f6fb3004fbcf2))
+* update typegen import ([#21](https://github.com/BiscuitTin/eslint-config/issues/21)) ([3d12e69](https://github.com/BiscuitTin/eslint-config/commit/3d12e698b48eee1d490841b3c94505056d0b7d0c))
+
 ## [0.0.2](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.1...eslint-config-v0.0.2) (2025-01-10)
 
 
