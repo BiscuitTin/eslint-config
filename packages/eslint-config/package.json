@@ -1,7 +1,7 @@
 {
   "name": "@biscuittin/eslint-config",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A collection of ESLint configurations for Biscuit Tin projects.",
   "author": "Biscuit Tin <opensource@biscuitt.in>",
   "license": "MIT",
@@ -51,14 +51,14 @@
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
-    "@eslint-react/eslint-plugin": "^1.24.1",
-    "@eslint-sukka/eslint-plugin-react-jsx-a11y": "^6.13.1",
+    "@eslint-react/eslint-plugin": "^1.25.0",
+    "@eslint-sukka/eslint-plugin-react-jsx-a11y": "^6.13.2",
     "@eslint/js": "^9.17.0",
     "@eslint/json": "^0.10.0",
     "@next/eslint-plugin-next": "^15.1.6",
     "@package-json/types": "^0.0.11",
     "@stylistic/eslint-plugin-jsx": "^3.0.0",
-    "eslint-config-flat-gitignore": "^1.0.0",
+    "eslint-config-flat-gitignore": "^2.0.0",
     "eslint-flat-config-utils": "^2.0.0",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-antfu": "^3.0.0",
@@ -80,13 +80,13 @@
     "globals": "^15.14.0",
     "jsonc-eslint-parser": "^2.4.0",
     "local-pkg": "^1.0.0",
-    "typescript-eslint": "^8.21.0"
+    "typescript-eslint": "^8.22.0"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.0.0",
     "@types/eslint-plugin-react-refresh": "^0.4.0",
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
-    "@typescript-eslint/parser": "^8.21.0",
+    "@typescript-eslint/parser": "^8.22.0",
     "dprint": "^0.48.0",
     "eslint": "^9.17.0"
   }
