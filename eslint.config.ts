@@ -2,6 +2,11 @@ import config from '@biscuittin/eslint-config'
 
 export default config(
   {
+    javascript: {
+      env: {
+        browser: false,
+      },
+    },
     typescript: {
       allowDefaultProject: [
         'commitlint.config.mjs',

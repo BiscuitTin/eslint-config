@@ -1,19 +1,39 @@
+import type { Linter } from 'eslint'
+
 import globals from 'globals'
 
 import type { OptionsNodeJs } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
-import { GLOB_JS } from '../globs.js'
+import { GLOB_JS, GLOB_TS } from '../globs.js'
 import plugins from '../plugins.js'
 import { getFlatConfigName, getPackageJson } from '../utils/index.js'
 
 const name = getFlatConfigName('node-js')
 const isModule = getPackageJson()?.type === 'module'
 
+const globalsCommonJs: Linter.Globals = {
+  ...globals.es2025,
+  ...globals.node,
+  ...globals.commonjs,
+  __dirname: 'readonly',
+  __filename: 'readonly',
+}
+
+const globalsModule: Linter.Globals = {
+  ...globals.es2025,
+  ...globals.node,
+  __dirname: 'off',
+  __filename: 'off',
+  exports: 'off',
+  module: 'off',
+  require: 'off',
+}
+
 export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
   const { module = isModule, extraFiles = [] } = options
 
-  const files: string[] = [GLOB_JS, ...extraFiles]
+  const files: string[] = [GLOB_JS, GLOB_TS, ...extraFiles]
 
   return [
     {
@@ -23,29 +43,11 @@ export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
         node: plugins['pluginNode'],
       },
       languageOptions: {
-        sourceType: module ? 'module' : 'commonjs',
         ecmaVersion: 'latest',
         parserOptions: {
           ecmaFeatures: {
             impliedStrict: true,
           },
-        },
-        globals: {
-          ...globals.es2025,
-          ...globals.node,
-          ...(module
-            ? {
-              __dirname: 'off',
-              __filename: 'off',
-              exports: 'off',
-              module: 'off',
-              require: 'off',
-            }
-            : {
-              ...globals.commonjs,
-              __dirname: 'readonly',
-              __filename: 'readonly',
-            }),
         },
       },
     },
@@ -57,11 +59,7 @@ export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
         // pluginNode.configs.commons
         // Ref: https://github.com/eslint-community/eslint-plugin-n/blob/ccf5f9e482c32f2fd2d5f78649d7f837a5db8870/lib/configs/_commons.js#L6
         'node/no-deprecated-api': 'error',
-        'node/no-extraneous-import': 'error',
-        'node/no-extraneous-require': 'error',
         'node/no-exports-assign': 'error',
-        'node/no-missing-import': 'error',
-        'node/no-missing-require': 'error',
         'node/no-process-exit': 'error',
         'node/no-unpublished-bin': 'error',
         'node/no-unpublished-import': 'error',
@@ -71,6 +69,12 @@ export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
         'node/no-unsupported-features/node-builtins': 'error',
         'node/process-exit-as-throw': 'error',
         'node/hashbang': 'error',
+
+        // Will handled by `eslint-plugin-import-x`
+        'node/no-extraneous-import': 'off',
+        'node/no-extraneous-require': 'off',
+        'node/no-missing-import': 'off',
+        'node/no-missing-require': 'off',
 
         // Require error handling in callbacks
         'node/handle-callback-err': ['error', '^error$'],
@@ -95,19 +99,52 @@ export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
       },
     },
     {
+      name: name.script,
+      files: ['**/*.[jt]s'],
+      languageOptions: {
+        sourceType: module ? 'module' : 'commonjs',
+        parserOptions: {
+          ecmaFeatures: {
+            globalReturn: !module,
+          },
+        },
+        globals: {
+          ...(module ? globalsModule : globalsCommonJs),
+        },
+      },
+    },
+    {
       name: name.commonjs,
-      files: ['*.c[jt]s', '.*.c[jt]s'],
+      files: ['**/*.c[jt]s'],
       languageOptions: {
         sourceType: 'commonjs',
+        parserOptions: {
+          ecmaFeatures: {
+            globalReturn: true,
+          },
+        },
         globals: {
-          ...globals.commonjs,
-          __dirname: 'readonly',
-          __filename: 'readonly',
+          ...globalsCommonJs,
         },
       },
       rules: {
         strict: ['error', 'global'],
         'node/no-unsupported-features/es-syntax': ['error', { ignores: [] }],
+      },
+    },
+    {
+      name: name.module,
+      files: ['**/*.m[jt]s'],
+      languageOptions: {
+        sourceType: 'module',
+        parserOptions: {
+          ecmaFeatures: {
+            globalReturn: false,
+          },
+        },
+        globals: {
+          ...globalsModule,
+        },
       },
     },
   ]
