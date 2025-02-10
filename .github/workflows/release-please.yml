@@ -31,8 +31,13 @@ jobs:
           node-version-file: .node-version
         if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Use Latest Corepack
+        run: |
+          echo "Before: corepack => $(corepack --version || echo 'not installed')"
+          npm install -g corepack@latest
+          echo "After : corepack => $(corepack --version)"
+          corepack enable
+          pnpm --version
         if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
 
       - uses: actions/setup-node@v4
