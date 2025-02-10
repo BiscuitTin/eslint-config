@@ -29,8 +29,13 @@ jobs:
         with:
           node-version-file: .node-version
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Use Latest Corepack
+        run: |
+          echo "Before: corepack => $(corepack --version || echo 'not installed')"
+          npm install -g corepack@latest
+          echo "After : corepack => $(corepack --version)"
+          corepack enable
+          pnpm --version
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
