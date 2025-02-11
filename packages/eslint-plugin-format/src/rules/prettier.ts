@@ -23,7 +23,7 @@ const format = createSyncFn<PrettierFormat, string>(
   path.join(workersDirectory, 'prettier.js'),
 )
 
-export default {
+const rule: Rule.RuleModule = {
   meta: {
     docs: {
       description: 'Use Prettier to format code',
@@ -105,4 +105,6 @@ export default {
       },
     }
   },
-} satisfies Rule.RuleModule
+}
+
+export default rule
