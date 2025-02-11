@@ -19,7 +19,7 @@ const format = createSyncFn<DprintFormat, string>(
   path.join(workersDirectory, 'dprint.js'),
 )
 
-export default {
+const rule: Rule.RuleModule = {
   meta: {
     docs: {
       description: 'Use dprint to format code',
@@ -75,4 +75,6 @@ export default {
       },
     }
   },
-} satisfies Rule.RuleModule
+}
+
+export default rule
