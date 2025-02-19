@@ -79,8 +79,8 @@ importers:
         specifier: ^1.26.2
         version: 1.26.2(eslint@9.20.1(jiti@2.4.2))(ts-api-utils@2.0.1(typescript@5.7.3))(typescript@5.7.3)
       '@eslint-sukka/eslint-plugin-react-jsx-a11y':
-        specifier: ^6.15.1
-        version: 6.15.1
+        specifier: ^6.15.2
+        version: 6.15.2
       '@eslint/js':
         specifier: ^9.20.0
         version: 9.20.0
@@ -824,8 +824,8 @@ packages:
     resolution: {integrity: sha512-9abwhGTd4DBxOy5jVF0CnjEYDiRTXg4cbbAulZ+MVqE03KZDWNAVYYEYI5e+YTOcyJbGYY/zPEYmB+c+cUEiyw==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
 
-  '@eslint-sukka/eslint-plugin-react-jsx-a11y@6.15.1':
-    resolution: {integrity: sha512-dadUU+HTWpI0NGwRgu+1tiV3HB2QM3dKPHPrZSFT+z698NA1khEz+v8xzLTToMf5t510alof/K6p91fIWeDzBA==}
+  '@eslint-sukka/eslint-plugin-react-jsx-a11y@6.15.2':
+    resolution: {integrity: sha512-B1hjhglX1QMtrpttEX1UTpWGr6S8JDizo8L6rbwT2FcODGjmfjfcrygYAKEwxGSZ8wamxc2q5E2i2dKBzjMbyw==}
 
   '@eslint/compat@1.2.6':
     resolution: {integrity: sha512-k7HNCqApoDHM6XzT30zGoETj+D+uUcZUb+IVAJmar3u6bvHf7hhHJcWx09QHj4/a2qrKZMWU0E16tvkiAdv06Q==}
@@ -5239,7 +5239,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint-sukka/eslint-plugin-react-jsx-a11y@6.15.1':
+  '@eslint-sukka/eslint-plugin-react-jsx-a11y@6.15.2':
     dependencies:
       '@nolyfill/array-includes': 1.0.28
       '@nolyfill/array.prototype.flat': 1.0.28
