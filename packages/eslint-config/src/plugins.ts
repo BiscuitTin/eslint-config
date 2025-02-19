@@ -23,6 +23,7 @@ import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactPreferFunctionComponent from 'eslint-plugin-react-prefer-function-component'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
 import * as pluginRegexp from 'eslint-plugin-regexp'
+// @ts-expect-error missing type info
 import pluginTailwindCSS from 'eslint-plugin-tailwindcss'
 import pluginUnicorn from 'eslint-plugin-unicorn'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
@@ -93,7 +94,7 @@ const plugins: Record<string, ESLint.Plugin> = {
 
   pluginStylisticJsx: memo(pluginStylisticJsx, 'eslint-plugin-jsx'),
 
-  pluginTailwindCSS: memo(pluginTailwindCSS, 'eslint-plugin-tailwindcss'),
+  pluginTailwindCSS: memo(pluginTailwindCSS, 'eslint-plugin-tailwindcss') as ESLint.Plugin,
   pluginTypescript: memo(pluginTypescript, 'typescript-eslint') as unknown as ESLint.Plugin,
 
   pluginUnicorn: memo(pluginUnicorn, 'eslint-plugin-unicorn'),
