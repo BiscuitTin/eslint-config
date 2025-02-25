@@ -34,12 +34,17 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
       },
       settings: {
         'react-x': {
-          additionalHooks: {
-            useLayoutEffect: ['useIsomorphicLayoutEffect'],
-          },
+          importSource: 'react',
+          jsxPragma: 'createElement',
+          jsxPragmaFrag: 'Fragment',
           polymorphicPropName: 'as',
+          strict: true,
           strictImportCheck: true,
           version: 'detect',
+          additionalHooks: {
+            useEffect: ['useIsomorphicLayoutEffect'],
+            useLayoutEffect: ['useIsomorphicLayoutEffect'],
+          },
         },
       },
     },
@@ -84,6 +89,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         ...pluginReact.configs.recommended.rules,
         '@eslint-react/ensure-forward-ref-using-ref': 'error',
         '@eslint-react/no-duplicate-jsx-props': 'error',
+        '@eslint-react/no-duplicate-key': 'error',
         '@eslint-react/no-children-count': 'error',
         '@eslint-react/no-children-for-each': 'error',
         '@eslint-react/no-children-only': 'error',
