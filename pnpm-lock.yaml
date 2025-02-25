@@ -35,7 +35,7 @@ importers:
         version: 22.13.4
       '@vitest/coverage-v8':
         specifier: ^3.0.6
-        version: 3.0.6(vitest@3.0.6(@types/node@22.13.4)(happy-dom@17.1.1)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0))
+        version: 3.0.6(vitest@3.0.6(@types/node@22.13.4)(happy-dom@17.1.8)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0))
       dprint:
         specifier: ^0.49.0
         version: 0.49.0
@@ -46,8 +46,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(eslint@9.20.1(jiti@2.4.2))
       happy-dom:
-        specifier: ^17.1.1
-        version: 17.1.1
+        specifier: ^17.1.8
+        version: 17.1.8
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -68,7 +68,7 @@ importers:
         version: 5.7.3
       vitest:
         specifier: ^3.0.6
-        version: 3.0.6(@types/node@22.13.4)(happy-dom@17.1.1)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0)
+        version: 3.0.6(@types/node@22.13.4)(happy-dom@17.1.8)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0)
 
   packages/eslint-config:
     dependencies:
@@ -1578,6 +1578,9 @@ packages:
   '@types/node@22.13.4':
     resolution: {integrity: sha512-ywP2X0DYtX3y08eFVx5fNIw7/uIv8hYUKgXoK8oayJlLnKcRfEYCxWMVE1XagUdVtCJlZT1AU4LXEABW+L1Peg==}
 
+  '@types/node@22.13.5':
+    resolution: {integrity: sha512-+lTU0PxZXn0Dr1NBtC7Y8cR21AJr87dLLU953CWA6pMxxv/UDc7jYAY90upcrie1nRcD6XNG5HOYEDtgW5TxAg==}
+
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
@@ -2785,8 +2788,8 @@ packages:
   h3@1.14.0:
     resolution: {integrity: sha512-ao22eiONdgelqcnknw0iD645qW0s9NnrJHr5OBz4WOMdBdycfSas1EQf1wXRsm+PcB2Yoj43pjBPwqIpJQTeWg==}
 
-  happy-dom@17.1.1:
-    resolution: {integrity: sha512-OSTkBlmD/6Do7gCd7nZB5iFq1bF9VQg/iFmjHmxvVX2S1UiOpo6sT+aFNnu3XUsB8hCZb9+GZ0G1g1TaMiAggw==}
+  happy-dom@17.1.8:
+    resolution: {integrity: sha512-Yxbq/FG79z1rhAf/iB6YM8wO2JB/JDQBy99RiLSs+2siEAi5J05x9eW1nnASHZJbpldjJE2KuFLsLZ+AzX/IxA==}
     engines: {node: '>=18.0.0'}
 
   has-flag@4.0.0:
@@ -4048,8 +4051,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  rxjs@7.8.1:
-    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
+  rxjs@7.8.2:
+    resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
 
   safe-execa@0.1.2:
     resolution: {integrity: sha512-vdTshSQ2JsRCgT8eKZWNJIL26C6bVqy1SOmuCMlKHegVeo8KYRobRrefOdUq9OozSPUUiSxrylteeRmLOMFfWg==}
@@ -5694,7 +5697,7 @@ snapshots:
       pretty-ms: 7.0.1
       ramda: '@pnpm/ramda@0.28.1'
       right-pad: 1.0.1
-      rxjs: 7.8.1
+      rxjs: 7.8.2
       semver: 7.7.1
       stacktracey: 2.1.8
       string-length: 4.0.2
@@ -6160,13 +6163,18 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
+  '@types/node@22.13.5':
+    dependencies:
+      undici-types: 6.20.0
+    optional: true
+
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/resolve@1.20.2': {}
 
   '@types/ssri@7.1.5':
     dependencies:
-      '@types/node': 22.13.4
+      '@types/node': 22.13.5
     optional: true
 
   '@typescript-eslint/eslint-plugin@8.24.1(@typescript-eslint/parser@8.24.1(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)':
@@ -6246,7 +6254,7 @@ snapshots:
       '@typescript-eslint/types': 8.24.1
       eslint-visitor-keys: 4.2.0
 
-  '@vitest/coverage-v8@3.0.6(vitest@3.0.6(@types/node@22.13.4)(happy-dom@17.1.1)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0))':
+  '@vitest/coverage-v8@3.0.6(vitest@3.0.6(@types/node@22.13.4)(happy-dom@17.1.8)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
@@ -6260,7 +6268,7 @@ snapshots:
       std-env: 3.8.0
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
-      vitest: 3.0.6(@types/node@22.13.4)(happy-dom@17.1.1)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0)
+      vitest: 3.0.6(@types/node@22.13.4)(happy-dom@17.1.8)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -7643,7 +7651,7 @@ snapshots:
       uncrypto: 0.1.3
       unenv: 1.10.0
 
-  happy-dom@17.1.1:
+  happy-dom@17.1.8:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -8924,7 +8932,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  rxjs@7.8.1:
+  rxjs@7.8.2:
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -9395,7 +9403,7 @@ snapshots:
       tsx: 4.19.3
       yaml: 2.7.0
 
-  vitest@3.0.6(@types/node@22.13.4)(happy-dom@17.1.1)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0):
+  vitest@3.0.6(@types/node@22.13.4)(happy-dom@17.1.8)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.6
       '@vitest/mocker': 3.0.6(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.36.0)(tsx@4.19.3)(yaml@2.7.0))
@@ -9419,7 +9427,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.13.4
-      happy-dom: 17.1.1
+      happy-dom: 17.1.8
     transitivePeerDependencies:
       - jiti
       - less
