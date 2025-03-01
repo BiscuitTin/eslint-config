@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.3...eslint-parser-plain-v0.0.4) (2025-03-01)
+
+
+### Bug Fixes
+
+* rule type error after eslint 9.20.0 ([#58](https://github.com/BiscuitTin/eslint-config/issues/58)) ([e9e1dfb](https://github.com/BiscuitTin/eslint-config/commit/e9e1dfb08e44240b4817cee98d29bea6957a4406))
+
 ## [0.0.3](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.2...eslint-parser-plain-v0.0.3) (2025-01-03)
 
 
