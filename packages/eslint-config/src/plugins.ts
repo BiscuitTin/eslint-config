@@ -18,8 +18,7 @@ import pluginNode from 'eslint-plugin-n'
 import pluginPerfectionist from 'eslint-plugin-perfectionist'
 // @ts-expect-error missing type info
 import * as pluginReactCompiler from 'eslint-plugin-react-compiler'
-// @ts-expect-error missing type info
-import pluginReactHooks from 'eslint-plugin-react-hooks'
+import * as pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactPreferFunctionComponent from 'eslint-plugin-react-prefer-function-component'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
 import * as pluginRegexp from 'eslint-plugin-regexp'
