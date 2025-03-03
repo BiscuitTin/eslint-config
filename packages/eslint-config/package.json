@@ -69,7 +69,7 @@
     "@eslint/json": "^0.10.0",
     "@next/eslint-plugin-next": "^15.2.0",
     "@package-json/types": "^0.0.11",
-    "@stylistic/eslint-plugin-jsx": "^4.1.0",
+    "@stylistic/eslint-plugin-jsx": "^4.2.0",
     "eslint-config-flat-gitignore": "^2.1.0",
     "eslint-flat-config-utils": "^2.0.1",
     "eslint-import-resolver-typescript": "^3.8.3",
