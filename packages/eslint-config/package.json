@@ -80,7 +80,7 @@
     "eslint-plugin-jsonc": "^2.19.1",
     "eslint-plugin-n": "^17.15.0",
     "eslint-plugin-perfectionist": "^4.9.0",
-    "eslint-plugin-react-compiler": "19.0.0-beta-e1e972c-20250221",
+    "eslint-plugin-react-compiler": "19.0.0-beta-40c6c23-20250301",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-prefer-function-component": "^3.4.0",
     "eslint-plugin-react-refresh": "^0.4.19",
