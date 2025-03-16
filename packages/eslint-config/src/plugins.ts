@@ -19,7 +19,6 @@ import pluginPerfectionist from 'eslint-plugin-perfectionist'
 // @ts-expect-error missing type info
 import * as pluginReactCompiler from 'eslint-plugin-react-compiler'
 import * as pluginReactHooks from 'eslint-plugin-react-hooks'
-import pluginReactPreferFunctionComponent from 'eslint-plugin-react-prefer-function-component'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
 import * as pluginRegexp from 'eslint-plugin-regexp'
 // @ts-expect-error missing type info
@@ -79,10 +78,6 @@ const plugins: Record<string, ESLint.Plugin> = {
     reactPlugins['@eslint-react/naming-convention'],
     'eslint-plugin-react-naming-convention',
   ) as unknown as ESLint.Plugin,
-  pluginReactPreferFunctionComponent: memo<ESLint.Plugin>(
-    pluginReactPreferFunctionComponent,
-    'eslint-plugin-react-prefer-function-component',
-  ),
   pluginReactRefresh: memo(pluginReactRefresh, 'eslint-plugin-react-refresh'),
   pluginReactWebApi: memo(
     reactPlugins['@eslint-react/web-api'],

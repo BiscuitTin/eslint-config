@@ -25,6 +25,6 @@ export function memo<T>(function_: NonNullable<T>, key?: string): T {
   }
 
   globalThis.__ESLINT_PLUGIN_MEMO__ ??= {}
-  globalThis.__ESLINT_PLUGIN_MEMO__[_key] ||= function_
+  globalThis.__ESLINT_PLUGIN_MEMO__[_key] ??= function_
   return globalThis.__ESLINT_PLUGIN_MEMO__[_key] as T
 }
