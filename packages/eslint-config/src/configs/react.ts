@@ -21,7 +21,6 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         'react-hooks': plugins['pluginReactHooks'],
         'react-compiler': plugins['pluginReactCompiler'],
         'react-refresh': plugins['pluginReactRefresh'],
-        'react-prefer-function-component': plugins['pluginReactPreferFunctionComponent'],
         'jsx-a11y': plugins['pluginJsxA11y'],
         '@stylistic/jsx': plugins['pluginStylisticJsx'],
 
@@ -64,10 +63,6 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         // eslint-plugin-react-refresh
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
         'react-refresh/only-export-components': 'warn',
-
-        // eslint-plugin-react-prefer-function-component
-        // https://github.com/tatethurston/eslint-plugin-react-prefer-function-component
-        'react-prefer-function-component/react-prefer-function-component': 'error',
 
         // @eslint-sukka/eslint-plugin-react-jsx-a11y
         // https://github.com/SukkaW/eslint-config-sukka/tree/master/packages/eslint-plugin-react-jsx-a11y
