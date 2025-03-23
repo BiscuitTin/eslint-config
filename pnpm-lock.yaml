@@ -52,8 +52,8 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       jiek:
-        specifier: ^2.3.3
-        version: 2.3.3(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.36.0))(@types/node@22.13.11)(esbuild-register@3.6.0(esbuild@0.25.1))(postcss@8.5.3)(rollup-plugin-esbuild@6.1.1(esbuild@0.25.1)(rollup@4.36.0))(rollup-plugin-postcss@4.0.2(postcss@8.5.3))(rollup-plugin-swc3@0.12.1(@swc/core@1.9.3)(rollup@4.36.0))(typescript@5.8.2)
+        specifier: 2.3.4-alpha.1
+        version: 2.3.4-alpha.1(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.36.0))(@types/node@22.13.11)(esbuild-register@3.6.0(esbuild@0.25.1))(postcss@8.5.3)(rollup-plugin-esbuild@6.1.1(esbuild@0.25.1)(rollup@4.36.0))(rollup-plugin-postcss@4.0.2(postcss@8.5.3))(rollup-plugin-swc3@0.12.1(@swc/core@1.9.3)(rollup@4.36.0))(typescript@5.8.2)
       jiti:
         specifier: ^2.4.2
         version: 2.4.2
@@ -861,6 +861,9 @@ packages:
 
   '@jiek/utils@0.2.3':
     resolution: {integrity: sha512-iUss+kyjE5M83pwfvyIpd3Z2osiKUzSzgUUcg8wm+RS7N5AvHBEhoLRGPZ60VgcgREH451Tgv3tQq4+AguO/5g==}
+
+  '@jiek/utils@0.2.4':
+    resolution: {integrity: sha512-h+qf+mUDjiLOYYp+RVEYOoV5twxq64TTeOhWt6tOgHRhTt1o+hES84ZGJJjC1brwWBq8lCYGpA060K9fo/aA+g==}
 
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -2936,8 +2939,8 @@ packages:
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
-  jiek@2.3.3:
-    resolution: {integrity: sha512-iZN6E3vky10aK12rITGTjA4S0giuGwzjjcKKvDVyjrHlDhgGe64YVCb3Di0f1ApqNh3lgw7dWrPrPw2k7fEzag==}
+  jiek@2.3.4-alpha.1:
+    resolution: {integrity: sha512-0obw7JFh/bgdh0P1DJlH10qeFWFFlguCsfHx5P4DgFsHNlW6n1d8TadcUdov5IIy6oBrwTZRnukA0v16VzYk2w==}
     hasBin: true
     peerDependencies:
       '@ast-grep/napi': ^0.32.3
@@ -5342,6 +5345,8 @@ snapshots:
 
   '@jiek/utils@0.2.3': {}
 
+  '@jiek/utils@0.2.4': {}
+
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -7736,12 +7741,12 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
-  jiek@2.3.3(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.36.0))(@types/node@22.13.11)(esbuild-register@3.6.0(esbuild@0.25.1))(postcss@8.5.3)(rollup-plugin-esbuild@6.1.1(esbuild@0.25.1)(rollup@4.36.0))(rollup-plugin-postcss@4.0.2(postcss@8.5.3))(rollup-plugin-swc3@0.12.1(@swc/core@1.9.3)(rollup@4.36.0))(typescript@5.8.2):
+  jiek@2.3.4-alpha.1(@pnpm/filter-workspace-packages@7.2.14(@pnpm/logger@5.2.0))(@rollup/plugin-terser@0.4.4(rollup@4.36.0))(@types/node@22.13.11)(esbuild-register@3.6.0(esbuild@0.25.1))(postcss@8.5.3)(rollup-plugin-esbuild@6.1.1(esbuild@0.25.1)(rollup@4.36.0))(rollup-plugin-postcss@4.0.2(postcss@8.5.3))(rollup-plugin-swc3@0.12.1(@swc/core@1.9.3)(rollup@4.36.0))(typescript@5.8.2):
     dependencies:
       '@inquirer/prompts': 7.2.0(@types/node@22.13.11)
       '@jiek/pkger': 0.2.2
       '@jiek/rollup-plugin-dts': 6.3.8(rollup@4.36.0)(typescript@5.8.2)
-      '@jiek/utils': 0.2.3
+      '@jiek/utils': 0.2.4
       '@rollup/plugin-commonjs': 28.0.1(rollup@4.36.0)
       '@rollup/plugin-inject': 5.0.5(rollup@4.36.0)
       '@rollup/plugin-json': 6.1.0(rollup@4.36.0)
