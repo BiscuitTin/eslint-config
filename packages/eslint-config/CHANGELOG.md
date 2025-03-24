@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.5...eslint-config-v0.0.6) (2025-03-24)
+
+
+### Bug Fixes
+
+* try fix import x lint errors when use yarn pnp ([#90](https://github.com/BiscuitTin/eslint-config/issues/90)) ([6e80053](https://github.com/BiscuitTin/eslint-config/commit/6e800539076a559d067dc48064f3d5ee8920b864))
+
 ## [0.0.5](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.4...eslint-config-v0.0.5) (2025-03-23)
 
 
