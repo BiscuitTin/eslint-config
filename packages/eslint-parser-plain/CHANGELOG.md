@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.4](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.3...eslint-parser-plain-v0.0.4) (2025-03-24)
+
+
+### Features
+
+* remove eslint-plugin-react-prefer-function-component and update dependencies ([#83](https://github.com/BiscuitTin/eslint-config/issues/83)) ([8b8431e](https://github.com/BiscuitTin/eslint-config/commit/8b8431eb4cfabec2067ec1f0eca6dad3e3e2a371))
+
+
+### Bug Fixes
+
+* rule type error after eslint 9.20.0 ([#58](https://github.com/BiscuitTin/eslint-config/issues/58)) ([e9e1dfb](https://github.com/BiscuitTin/eslint-config/commit/e9e1dfb08e44240b4817cee98d29bea6957a4406))
+
 ## [0.0.3](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.2...eslint-parser-plain-v0.0.3) (2025-01-03)
 
 
