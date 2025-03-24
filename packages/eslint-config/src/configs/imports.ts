@@ -26,10 +26,6 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
         antfu: plugins['pluginAntfu'],
         perfectionist: plugins['pluginPerfectionist'],
       },
-      languageOptions: {
-        sourceType: 'module',
-        ecmaVersion: 'latest',
-      },
     },
     {
       name: name.rules,

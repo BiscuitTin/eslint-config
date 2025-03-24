@@ -1,17 +1,18 @@
 import type { Linter } from 'eslint'
 
 import js from '@eslint/js'
+import { createNodeResolver } from 'eslint-plugin-import-x/node-resolver.js'
 import globals from 'globals'
 
 import type { OptionsJavaScript } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
-import { GLOB_SRC } from '../globs.js'
+import { GLOB_JS, GLOB_JSX } from '../globs.js'
 import plugins from '../plugins.js'
 import { getFlatConfigName } from '../utils/index.js'
 
 const name = getFlatConfigName('javascript')
-const files: string[] = [GLOB_SRC]
+const files: string[] = [GLOB_JS, GLOB_JSX]
 
 const commonjsGlobalsOffList = Object.keys(globals.commonjs).map<
   Record<string, Linter.GlobalConf>
@@ -20,6 +21,8 @@ const commonjsGlobalsOff = Object.assign({}, ...commonjsGlobalsOffList) as Recor
   string,
   Linter.GlobalConf
 >
+
+const extensions = ['.js', '.jsx', '.cjs', '.mjs']
 
 export function javascript(options: OptionsJavaScript = {}): TypedFlatConfigItem[] {
   const { env = { browser: true }, module = true } = options
@@ -58,7 +61,10 @@ export function javascript(options: OptionsJavaScript = {}): TypedFlatConfigItem
         },
       },
       settings: {
-        'import-x/extensions': ['.js', '.jsx', '.cjs', '.mjs'],
+        'import-x/extensions': extensions,
+        'import-x/resolver-next': [
+          createNodeResolver({ extensions }),
+        ],
       },
     },
     {

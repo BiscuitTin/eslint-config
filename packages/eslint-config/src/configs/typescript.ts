@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint'
 
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
+import { createTypeScriptImportResolver, defaultExtensions } from 'eslint-import-resolver-typescript'
 import pluginImportX from 'eslint-plugin-import-x'
 import process from 'node:process'
 import { configs } from 'typescript-eslint'
@@ -31,6 +31,8 @@ const typescriptStylisticTypeCheckedRules = Object.assign(
   ...typescriptStylisticTypeCheckedRuleList,
 ) as Record<string, Linter.RuleEntry>
 
+const externalModuleFolders = ['node_modules', 'node_modules/@types']
+
 export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem[] {
   const {
     isInEditor = false,
@@ -46,6 +48,15 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
     GLOB_TSX,
     ...extraFileExtensions.map((extension) => `**/*${extension}`),
   ]
+
+  const extensions = ['.cjs', '.mjs', '.cts', '.mts', ...defaultExtensions, ...extraFileExtensions]
+
+  // If you are using `yarn` PnP as your package manager, add the `.yarn` folder and all
+  // your installed dependencies will be considered as `external`, instead of `internal`.
+  // See: https://github.com/un-ts/eslint-plugin-import-x?tab=readme-ov-file#import-xexternal-module-folders
+  if (process.versions['pnp']) {
+    externalModuleFolders.push('.yarn')
+  }
 
   const tsProjectOptions = tsconfigPath === true
     ? {
@@ -82,18 +93,8 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
         },
       },
       settings: {
-        'import-x/extensions': [
-          '.js',
-          '.jsx',
-          '.cjs',
-          '.mjs',
-          '.ts',
-          '.tsx',
-          '.cts',
-          '.mts',
-          ...extraFileExtensions,
-        ],
-        'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
+        'import-x/extensions': extensions,
+        'import-x/external-module-folders': externalModuleFolders,
         'import-x/parsers': {
           '@typescript-eslint/parser': ['.ts', '.tsx', '.cts', '.mts', ...extraFileExtensions],
         },
@@ -103,16 +104,7 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
           createTypeScriptImportResolver({
             alwaysTryTypes: true,
             project: tsconfigPath === true ? undefined : tsconfigPath,
-            extensions: [
-              '.ts',
-              '.tsx',
-              '.d.ts',
-              '.js',
-              '.jsx',
-              '.json',
-              '.node',
-              ...extraFileExtensions,
-            ],
+            extensions,
           }),
         ],
       },

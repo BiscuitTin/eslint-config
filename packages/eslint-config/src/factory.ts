@@ -77,10 +77,6 @@ function configOptions<T extends SharedOptions>(
   return { ...defaultOptions, ...options, isInEditor } as ConfigOptions<T>
 }
 
-const pluginRenaming: Record<string, string> = {
-  'import-x': 'import',
-}
-
 /**
  * Construct an array of ESLint flat config items.
  *
@@ -167,7 +163,7 @@ export async function config(
   let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>(...configs)
 
   const _userConfigs = userConfigs as ResolvableFlatConfig<TypedFlatConfigItem>[]
-  composer = composer.append(..._userConfigs).renamePlugins(pluginRenaming)
+  composer = composer.append(..._userConfigs)
 
   return composer
 }
