@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 
 import js from '@eslint/js'
-import { createNodeResolver } from 'eslint-plugin-import-x/node-resolver.js'
+import { createNodeResolver } from 'eslint-plugin-import-x'
 import globals from 'globals'
 
 import type { OptionsJavaScript } from '../options.js'

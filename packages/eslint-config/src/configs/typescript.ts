@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 
 import { createTypeScriptImportResolver, defaultExtensions } from 'eslint-import-resolver-typescript'
-import pluginImportX from 'eslint-plugin-import-x'
+import { configs as importXConfigs } from 'eslint-plugin-import-x'
 import process from 'node:process'
 import { configs } from 'typescript-eslint'
 
@@ -116,7 +116,7 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
         // eslint-plugin-import-x
         // https://github.com/un-ts/eslint-plugin-import-x
         // TypeScript compilation already ensures that named imports exist in the referenced module
-        ...pluginImportX.configs.typescript.rules,
+        ...importXConfigs.typescript.rules,
 
         // Contains all of `recommended`, `recommended-type-checked`, and `strict`, along with additional strict rules that require type information.
         // https://typescript-eslint.io/users/configs#strict-type-checked
