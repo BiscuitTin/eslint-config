@@ -1,4 +1,4 @@
-import pluginImportX from 'eslint-plugin-import-x'
+import { configs as importXConfigs } from 'eslint-plugin-import-x'
 import process from 'node:process'
 
 import type { OptionsTypeScript } from '../options.js'
@@ -33,7 +33,7 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
       rules: {
         // eslint-plugin-import-x
         // https://github.com/un-ts/eslint-plugin-import-x
-        ...pluginImportX.configs.recommended.rules,
+        ...importXConfigs.recommended.rules,
 
         // Copied from SukkaW/eslint-config-sukka
         // Ref: https://github.com/SukkaW/eslint-config-sukka/blob/bbca2d568d738a1d287c473804ea8ccbf00d3c86/packages/eslint-config-sukka/src/modules/javascript.ts#L122
