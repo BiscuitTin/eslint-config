@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.7](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.6...eslint-config-v0.0.7) (2025-07-28)
+
+
+### Features
+
+* replace jiek with tsdown ([#147](https://github.com/BiscuitTin/eslint-config/issues/147)) ([2e19f9c](https://github.com/BiscuitTin/eslint-config/commit/2e19f9c5712c7c3ef19a9d319156c07ff6657050))
+
 ## [0.0.6](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.5...eslint-config-v0.0.6) (2025-03-24)
 
 
