@@ -1,3 +1,4 @@
+/* eslint-disable import-x/no-relative-packages -- Disable some rules */
 /* eslint-disable @typescript-eslint/no-deprecated -- Disable some rules */
 
 /**
@@ -5,6 +6,10 @@
  * Copied from antfu/eslint-config
  * Ref: https://github.com/antfu/eslint-config/blob/a6efa0957a6189001b85d1a1d68a90511dae2022/scripts/typegen.ts
  */
+
+import { flatConfigsToRulesDTS } from 'eslint-typegen/core'
+import { builtinRules } from 'eslint/use-at-your-own-risk'
+import fs from 'node:fs/promises'
 
 import {
   combine,
@@ -23,10 +28,7 @@ import {
   tailwindcss,
   typescript,
   unicorn,
-} from '@biscuittin/eslint-config'
-import { flatConfigsToRulesDTS } from 'eslint-typegen/core'
-import { builtinRules } from 'eslint/use-at-your-own-risk'
-import fs from 'node:fs/promises'
+} from '../packages/eslint-config/src/index.js'
 
 const configs = await combine(
   {

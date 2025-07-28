@@ -12,12 +12,15 @@
   },
   "bugs": "https://github.com/BiscuitTin/eslint-config/issues",
   "exports": {
-    "./package.json": "./package.json",
-    ".": "./src/index.ts"
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   },
   "imports": {
     "#typegen": "./typegen.d.ts"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "LICENSE",
     "README.md",
@@ -28,10 +31,9 @@
     "provenance": true
   },
   "scripts": {
+    "build": "tsdown",
     "build:inspector": "eslint-config-inspector build --config eslint-inspector.config.ts",
-    "dev": "eslint-config-inspector --config eslint-inspector.config.ts",
-    "prepublish": "jiek build --noMin && jiek",
-    "postpublish": "jiek"
+    "dev": "eslint-config-inspector --config eslint-inspector.config.ts"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=8.17.0",
