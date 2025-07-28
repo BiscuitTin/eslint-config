@@ -1,4 +1,6 @@
-import config from '@biscuittin/eslint-config'
+/* eslint-disable import-x/no-relative-packages -- Disable this rule */
+
+import config from './packages/eslint-config/src/index.js'
 
 export default config(
   {
