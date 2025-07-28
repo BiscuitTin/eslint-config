@@ -16,6 +16,7 @@
     "../eslint.config.ts",
     "../vitest.config.ts",
     "../vitest.workspace.ts",
+    "../packages/*/tsdown.config.ts",
     "../scripts/**/*.ts",
     "../packages/*/src/**/*.node.ts",
     "../packages/eslint-config/src",

@@ -15,7 +15,6 @@ words:
   - gplane
   - hasown
   - Intelli
-  - jiek
   - malva
   - micromark
   - mjsx
@@ -29,6 +28,7 @@ words:
   - Syncify
   - textnodes
   - tsconfigs
+  - tsdown
   - typegen
   - Vali
   - valibot

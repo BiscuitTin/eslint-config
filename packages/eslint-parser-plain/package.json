@@ -18,9 +18,12 @@
     "eslint-parser-plain"
   ],
   "exports": {
-    "./package.json": "./package.json",
-    ".": "./src/index.ts"
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "LICENSE",
     "README.md",
@@ -30,8 +33,7 @@
     "provenance": true
   },
   "scripts": {
-    "prepublish": "jiek build --noMin && jiek",
-    "postpublish": "jiek"
+    "build": "tsdown"
   },
   "peerDependencies": {
     "eslint": "^9.0.0"
