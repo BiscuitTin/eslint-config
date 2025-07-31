@@ -1,4 +1,5 @@
-// @ts-expect-error missing type info
+/* eslint-disable import-x/no-named-as-default-member -- FIXME */
+
 import pluginNextJs from '@next/eslint-plugin-next'
 
 import type { TypedFlatConfigItem } from '../types.js'
@@ -23,14 +24,14 @@ export function nextJs(): TypedFlatConfigItem[] {
     {
       name: name.rules,
       files,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- Next.js ESLint plugin missing types
+
       rules: {
         // @next/eslint-plugin-next
         // https://www.npmjs.com/package/@next/eslint-plugin-next
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- Next.js ESLint plugin missing types
-        ...pluginNextJs?.configs?.recommended?.rules,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- Next.js ESLint plugin missing types
-        ...pluginNextJs?.configs['core-web-vitals'].rules,
+
+        ...pluginNextJs.configs.recommended.rules,
+
+        ...pluginNextJs.configs['core-web-vitals'].rules,
 
         // eslint-plugin-react-refresh
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
