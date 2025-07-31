@@ -50,7 +50,7 @@ export function unicorn(): TypedFlatConfigItem[] {
       rules: {
         // eslint-plugin-unicorn
         // https://github.com/sindresorhus/eslint-plugin-unicorn
-        ...pluginUnicorn.configs['flat/recommended'].rules,
+        ...pluginUnicorn.configs.recommended.rules,
       },
     },
   ]

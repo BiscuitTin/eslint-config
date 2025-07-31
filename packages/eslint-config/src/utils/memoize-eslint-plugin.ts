@@ -1,5 +1,5 @@
 declare global {
-  // eslint-disable-next-line no-var, @typescript-eslint/naming-convention -- Ignore this rule
+  // eslint-disable-next-line @typescript-eslint/naming-convention -- Ignore this rule
   var __ESLINT_PLUGIN_MEMO__: Record<string, unknown> | undefined
 }
 

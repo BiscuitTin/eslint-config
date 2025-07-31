@@ -46,10 +46,7 @@ export default config(
     },
   },
   {
-    files: [
-      'vitest.workspace.ts',
-      'packages/*/tests/**/*.spec.ts',
-    ],
+    files: ['packages/*/tests/**/*.spec.ts'],
     rules: {
       'unicorn/no-null': 'off',
       '@typescript-eslint/no-confusing-void-expression': 'off',
