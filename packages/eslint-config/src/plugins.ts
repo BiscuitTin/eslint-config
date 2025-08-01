@@ -5,9 +5,8 @@ import pluginESLintComments from '@eslint-community/eslint-plugin-eslint-comment
 import pluginReact from '@eslint-react/eslint-plugin'
 import { eslint_plugin_jsx_a11y_minimal as pluginJsxA11y } from '@eslint-sukka/eslint-plugin-react-jsx-a11y'
 import pluginJson from '@eslint/json'
-// @ts-expect-error missing type info
 import pluginNextJs from '@next/eslint-plugin-next'
-import pluginStylisticJsx from '@stylistic/eslint-plugin-jsx'
+import pluginStylistic from '@stylistic/eslint-plugin'
 import pluginAntfu from 'eslint-plugin-antfu'
 // @ts-expect-error missing type info
 import pluginAutofix from 'eslint-plugin-autofix'
@@ -16,7 +15,6 @@ import pluginImportX from 'eslint-plugin-import-x'
 import pluginJsonc from 'eslint-plugin-jsonc'
 import pluginNode from 'eslint-plugin-n'
 import pluginPerfectionist from 'eslint-plugin-perfectionist'
-// @ts-expect-error missing type info
 import * as pluginReactCompiler from 'eslint-plugin-react-compiler'
 import * as pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
@@ -86,7 +84,7 @@ const plugins: Record<string, ESLint.Plugin> = {
 
   pluginRegexp: memo(pluginRegexp, 'eslint-plugin-regexp'),
 
-  pluginStylisticJsx: memo(pluginStylisticJsx, 'eslint-plugin-jsx'),
+  pluginStylistic: memo(pluginStylistic, 'eslint-plugin-stylistic'),
 
   pluginTailwindCSS: memo(pluginTailwindCSS, 'eslint-plugin-tailwindcss') as ESLint.Plugin,
   pluginTypescript: memo(pluginTypescript, 'typescript-eslint') as unknown as ESLint.Plugin,
