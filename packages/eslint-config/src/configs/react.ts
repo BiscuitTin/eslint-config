@@ -22,7 +22,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
         'react-compiler': plugins['pluginReactCompiler'],
         'react-refresh': plugins['pluginReactRefresh'],
         'jsx-a11y': plugins['pluginJsxA11y'],
-        '@stylistic/jsx': plugins['pluginStylisticJsx'],
+        '@stylistic': plugins['pluginStylistic'],
 
         '@eslint-react': plugins['pluginReact'],
         '@eslint-react/dom': plugins['pluginReactDom'],
@@ -128,28 +128,28 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
           '@eslint-react/avoid-shorthand-boolean': 'off',
           '@eslint-react/avoid-shorthand-fragment': 'error',
 
-          // @stylistic/eslint-plugin-jsx
+          // @stylistic/eslint-plugin
           // https://github.com/eslint-stylistic/eslint-stylistic/tree/main/packages/eslint-plugin-jsx
-          '@stylistic/jsx/jsx-closing-bracket-location': 'error',
-          '@stylistic/jsx/jsx-closing-tag-location': 'error',
-          '@stylistic/jsx/jsx-curly-brace-presence': [
+          '@stylistic/jsx-closing-bracket-location': 'error',
+          '@stylistic/jsx-closing-tag-location': 'error',
+          '@stylistic/jsx-curly-brace-presence': [
             'error',
             { propElementValues: 'always' },
           ],
-          '@stylistic/jsx/jsx-equals-spacing': 'error',
-          '@stylistic/jsx/jsx-first-prop-new-line': ['error', 'multiline'],
-          '@stylistic/jsx/jsx-function-call-newline': ['error', 'multiline'],
-          '@stylistic/jsx/jsx-max-props-per-line': [
+          '@stylistic/jsx-equals-spacing': 'error',
+          '@stylistic/jsx-first-prop-new-line': ['error', 'multiline'],
+          '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
+          '@stylistic/jsx-max-props-per-line': [
             'error',
             { maximum: 1, when: 'multiline' },
           ],
-          '@stylistic/jsx/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
-          '@stylistic/jsx/jsx-pascal-case': [
+          '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
+          '@stylistic/jsx-pascal-case': [
             'error',
             { allowNamespace: true, ignore: ['motion'] },
           ],
-          '@stylistic/jsx/jsx-self-closing-comp': ['error', { component: true, html: true }],
-          '@stylistic/jsx/jsx-tag-spacing': [
+          '@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
+          '@stylistic/jsx-tag-spacing': [
             'error',
             {
               afterOpening: 'never',
@@ -158,7 +158,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
               closingSlash: 'never',
             },
           ],
-          '@stylistic/jsx/jsx-wrap-multilines': [
+          '@stylistic/jsx-wrap-multilines': [
             'error',
             {
               arrow: 'parens-new-line',
@@ -171,7 +171,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
               return: 'parens-new-line',
             },
           ],
-          '@stylistic/jsx/jsx-sort-props': [
+          '@stylistic/jsx-sort-props': [
             'error',
             {
               callbacksLast: true,
