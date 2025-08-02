@@ -1,11 +1,12 @@
-import pluginUnicorn from 'eslint-plugin-unicorn'
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_ALL_SRC, GLOB_SRC } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginUnicorn = memo(eslintPluginUnicorn, 'eslint-plugin-unicorn')
 
 const name = getFlatConfigName('unicorn')
 const files: string[] = [GLOB_SRC]
@@ -17,7 +18,7 @@ export function unicorn(): TypedFlatConfigItem[] {
       name: `${name.setup}/all-src`,
       files: allFiles,
       plugins: {
-        unicorn: plugins['pluginUnicorn'],
+        unicorn: pluginUnicorn,
       },
     },
     {

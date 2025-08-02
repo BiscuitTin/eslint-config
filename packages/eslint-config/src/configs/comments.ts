@@ -1,7 +1,13 @@
+import type { ESLint } from 'eslint'
+
+// @ts-expect-error missing type info
+import eslintPluginESLintComments from '@eslint-community/eslint-plugin-eslint-comments'
+
 import type { TypedFlatConfigItem } from '../types.js'
 
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginESLintComments = memo(eslintPluginESLintComments, 'eslint-plugin-eslint-comments') as ESLint.Plugin
 
 const name = getFlatConfigName('eslint-comments')
 
@@ -10,7 +16,7 @@ export function comments(): TypedFlatConfigItem[] {
     {
       name: name.setup,
       plugins: {
-        '@eslint-community/eslint-comments': plugins['pluginESLintComments'],
+        '@eslint-community/eslint-comments': pluginESLintComments,
       },
     },
     {

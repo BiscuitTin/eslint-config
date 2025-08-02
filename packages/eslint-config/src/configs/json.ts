@@ -1,14 +1,17 @@
 import type { Linter } from 'eslint'
 
-import pluginJsonc from 'eslint-plugin-jsonc'
+import eslintPluginJson from '@eslint/json'
+import eslintPluginJsonc from 'eslint-plugin-jsonc'
 
 import type { OptionsJson } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs.js'
 import parsers from '../parsers.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginJson = memo(eslintPluginJson, 'eslint-plugin-json')
+const pluginJsonc = memo(eslintPluginJsonc, 'eslint-plugin-jsonc')
 
 const name = getFlatConfigName('json')
 
@@ -34,8 +37,8 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
       name: name.setup,
       files,
       plugins: {
-        json: plugins['pluginJson'],
-        jsonc: plugins['pluginJsonc'],
+        json: pluginJson,
+        jsonc: pluginJsonc,
       },
       languageOptions: {
         parser: parsers['parserJsonc'],

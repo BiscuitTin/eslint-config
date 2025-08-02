@@ -1,13 +1,15 @@
 import type { Linter } from 'eslint'
 
+import eslintPluginNode from 'eslint-plugin-n'
 import globals from 'globals'
 
 import type { OptionsNodeJs } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_JS, GLOB_TS } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName, getPackageJson } from '../utils/index.js'
+import { getFlatConfigName, getPackageJson, memo } from '../utils/index.js'
+
+const pluginNode = memo(eslintPluginNode, 'eslint-plugin-n')
 
 const name = getFlatConfigName('node-js')
 const isModule = getPackageJson()?.type === 'module'
@@ -40,7 +42,7 @@ export function nodeJs(options: OptionsNodeJs = {}): TypedFlatConfigItem[] {
       name: name.setup,
       files,
       plugins: {
-        node: plugins['pluginNode'],
+        node: pluginNode,
       },
       languageOptions: {
         ecmaVersion: 'latest',

@@ -1,11 +1,30 @@
-import pluginReact from '@eslint-react/eslint-plugin'
+import eslintPluginReact from '@eslint-react/eslint-plugin'
+import { eslint_plugin_jsx_a11y_minimal as eslintPluginJsxA11y } from '@eslint-sukka/eslint-plugin-react-jsx-a11y'
+import eslintPluginStylistic from '@stylistic/eslint-plugin'
+import * as eslintPluginReactCompiler from 'eslint-plugin-react-compiler'
+import * as eslintPluginReactHooks from 'eslint-plugin-react-hooks'
+import eslintPluginReactRefresh from 'eslint-plugin-react-refresh'
 
 import type { OptionsReact } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_SRC } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const reactPlugins = eslintPluginReact.configs.all.plugins
+/* eslint-disable format/dprint -- disable format */
+const pluginJsxA11y = memo(eslintPluginJsxA11y, 'eslint-plugin-react-jsx-a11y')
+const pluginReact = memo(reactPlugins['@eslint-react'], 'eslint-plugin-react-x')
+const pluginReactCompiler = memo(eslintPluginReactCompiler, 'eslint-plugin-react-compiler')
+const pluginReactDebug = memo(reactPlugins['@eslint-react/debug'], 'eslint-plugin-react-debug')
+const pluginReactDom = memo(reactPlugins['@eslint-react/dom'], 'eslint-plugin-react-dom')
+const pluginReactHooks = memo(eslintPluginReactHooks, 'eslint-plugin-react-hooks')
+const pluginReactHooksExtra = memo(reactPlugins['@eslint-react/hooks-extra'], 'eslint-plugin-react-hooks-extra')
+const pluginReactHooksNamingConvention = memo(reactPlugins['@eslint-react/naming-convention'], 'eslint-plugin-react-naming-convention')
+const pluginReactRefresh = memo(eslintPluginReactRefresh, 'eslint-plugin-react-refresh')
+const pluginReactWebApi = memo(reactPlugins['@eslint-react/web-api'], 'eslint-plugin-react-web-api')
+const pluginStylistic = memo(eslintPluginStylistic, 'eslint-plugin-stylistic')
+/* eslint-enable format/dprint -- disable format */
 
 const name = getFlatConfigName('react')
 const files: string[] = [GLOB_SRC]
@@ -18,18 +37,18 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
       name: name.setup,
       files,
       plugins: {
-        'react-hooks': plugins['pluginReactHooks'],
-        'react-compiler': plugins['pluginReactCompiler'],
-        'react-refresh': plugins['pluginReactRefresh'],
-        'jsx-a11y': plugins['pluginJsxA11y'],
-        '@stylistic': plugins['pluginStylistic'],
+        'react-hooks': pluginReactHooks,
+        'react-compiler': pluginReactCompiler,
+        'react-refresh': pluginReactRefresh,
+        'jsx-a11y': pluginJsxA11y,
+        '@stylistic': pluginStylistic,
 
-        '@eslint-react': plugins['pluginReact'],
-        '@eslint-react/dom': plugins['pluginReactDom'],
-        '@eslint-react/web-api': plugins['pluginReactWebApi'],
-        '@eslint-react/debug': plugins['pluginReactDebug'],
-        '@eslint-react/hooks-extra': plugins['pluginReactHooksExtra'],
-        '@eslint-react/naming-convention': plugins['pluginReactHooksNamingConvention'],
+        '@eslint-react': pluginReact,
+        '@eslint-react/dom': pluginReactDom,
+        '@eslint-react/web-api': pluginReactWebApi,
+        '@eslint-react/debug': pluginReactDebug,
+        '@eslint-react/hooks-extra': pluginReactHooksExtra,
+        '@eslint-react/naming-convention': pluginReactHooksNamingConvention,
       },
       settings: {
         'react-x': {

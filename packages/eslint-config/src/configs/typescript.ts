@@ -1,17 +1,25 @@
 import type { Linter } from 'eslint'
 
+import eslintPluginReact from '@eslint-react/eslint-plugin'
 import { createTypeScriptImportResolver, defaultExtensions } from 'eslint-import-resolver-typescript'
-import { configs as importXConfigs } from 'eslint-plugin-import-x'
+import eslintPluginAntfu from 'eslint-plugin-antfu'
+import eslintPluginImportX, { configs as importXConfigs } from 'eslint-plugin-import-x'
 import process from 'node:process'
-import { configs } from 'typescript-eslint'
+import { configs, plugin as eslintPluginTypescript } from 'typescript-eslint'
 
 import type { OptionsTypeScript } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_TS, GLOB_TSX } from '../globs.js'
 import parsers from '../parsers.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const reactPlugins = eslintPluginReact.configs.all.plugins
+const pluginAntfu = memo(eslintPluginAntfu, 'eslint-plugin-antfu')
+const pluginImportX = memo(eslintPluginImportX, 'eslint-plugin-import-x')
+const pluginReact = memo(reactPlugins['@eslint-react'], 'eslint-plugin-react-x')
+const pluginReactDom = memo(reactPlugins['@eslint-react/dom'], 'eslint-plugin-react-dom')
+const pluginTypescript = memo(eslintPluginTypescript, 'typescript-eslint')
 
 const name = getFlatConfigName('typescript')
 
@@ -72,9 +80,9 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
       name: name.setup,
       files,
       plugins: {
-        'import-x': plugins['pluginImportX'],
-        '@typescript-eslint': plugins['pluginTypescript'],
-        antfu: plugins['pluginAntfu'],
+        'import-x': pluginImportX,
+        '@typescript-eslint': pluginTypescript,
+        antfu: pluginAntfu,
       },
       languageOptions: {
         sourceType: 'module',
@@ -179,8 +187,8 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
       name: `${name.base}/react-type-checked`,
       files,
       plugins: {
-        '@eslint-react': plugins['pluginReact'],
-        '@eslint-react/dom': plugins['pluginReactDom'],
+        '@eslint-react': pluginReact,
+        '@eslint-react/dom': pluginReactDom,
       },
       rules: reactTypeCheck
         ? {

@@ -1,12 +1,19 @@
-import { configs as importXConfigs } from 'eslint-plugin-import-x'
+import eslintPluginAntfu from 'eslint-plugin-antfu'
+import eslintPluginImportX, { configs as importXConfigs } from 'eslint-plugin-import-x'
+import eslintPluginPerfectionist from 'eslint-plugin-perfectionist'
+import eslintPluginUnusedImports from 'eslint-plugin-unused-imports'
 import process from 'node:process'
 
 import type { OptionsTypeScript } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_SRC } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginAntfu = memo(eslintPluginAntfu, 'eslint-plugin-antfu')
+const pluginImportX = memo(eslintPluginImportX, 'eslint-plugin-import-x')
+const pluginPerfectionist = memo(eslintPluginPerfectionist, 'eslint-plugin-perfectionist')
+const pluginUnusedImports = memo(eslintPluginUnusedImports, 'eslint-plugin-unused-imports')
 
 const name = getFlatConfigName('imports')
 const files: string[] = [GLOB_SRC]
@@ -21,10 +28,10 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
       name: name.setup,
       files,
       plugins: {
-        'import-x': plugins['pluginImportX'],
-        'unused-imports': plugins['pluginUnusedImports'],
-        antfu: plugins['pluginAntfu'],
-        perfectionist: plugins['pluginPerfectionist'],
+        'import-x': pluginImportX,
+        'unused-imports': pluginUnusedImports,
+        antfu: pluginAntfu,
+        perfectionist: pluginPerfectionist,
       },
     },
     {

@@ -1,10 +1,13 @@
-import pluginNextJs from '@next/eslint-plugin-next'
+import eslintPluginNextJs from '@next/eslint-plugin-next'
+import eslintPluginReactRefresh from 'eslint-plugin-react-refresh'
 
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_SRC } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginNextJs = memo(eslintPluginNextJs, 'eslint-plugin-next')
+const pluginReactRefresh = memo(eslintPluginReactRefresh, 'eslint-plugin-react-refresh')
 
 const name = getFlatConfigName('next-js')
 const files: string[] = [GLOB_SRC]
@@ -15,8 +18,8 @@ export function nextJs(): TypedFlatConfigItem[] {
       name: name.setup,
       files,
       plugins: {
-        '@next/next': plugins['pluginNextJs'],
-        'react-refresh': plugins['pluginReactRefresh'],
+        '@next/next': pluginNextJs,
+        'react-refresh': pluginReactRefresh,
       },
     },
     {
@@ -27,7 +30,7 @@ export function nextJs(): TypedFlatConfigItem[] {
         // @next/eslint-plugin-next
         // https://www.npmjs.com/package/@next/eslint-plugin-next
         // @ts-expect-error missing type info
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, import-x/no-named-as-default-member -- missing type info
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- missing type info
         ...pluginNextJs.flatConfig.coreWebVitals.rules,
 
         // eslint-plugin-react-refresh
