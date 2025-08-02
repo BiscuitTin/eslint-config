@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.7...eslint-config-v0.1.0) (2025-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* import plugins in separate files ([#154](https://github.com/BiscuitTin/eslint-config/issues/154))
+
+### Features
+
+* eslint plugin stylistic and next-js rules migrate ([#153](https://github.com/BiscuitTin/eslint-config/issues/153)) ([dbc30c2](https://github.com/BiscuitTin/eslint-config/commit/dbc30c2e041dcd48c3a294a3e24d811521cff397))
+* import plugins in separate files ([#154](https://github.com/BiscuitTin/eslint-config/issues/154)) ([948d9f7](https://github.com/BiscuitTin/eslint-config/commit/948d9f7b661f8e679ad14ae28ce8b3f4427b3862))
+* update eslint packages ([#151](https://github.com/BiscuitTin/eslint-config/issues/151)) ([37bdf1b](https://github.com/BiscuitTin/eslint-config/commit/37bdf1bda21e2b31906a579ff59d32bc947b9102))
+
 ## [0.0.7](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.6...eslint-config-v0.0.7) (2025-07-28)
 
 
