@@ -1,11 +1,11 @@
-import * as pluginRegexp from 'eslint-plugin-regexp'
+import * as eslintPluginRegexp from 'eslint-plugin-regexp'
 
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_SRC } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
 
+const pluginRegexp = memo(eslintPluginRegexp, 'eslint-plugin-regexp')
 const name = getFlatConfigName('regexp')
 const files: string[] = [GLOB_SRC]
 
@@ -15,7 +15,7 @@ export function regexp(): TypedFlatConfigItem[] {
       name: name.setup,
       files,
       plugins: {
-        regexp: plugins['pluginRegexp'],
+        regexp: pluginRegexp,
       },
     },
     {

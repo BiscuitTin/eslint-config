@@ -1,8 +1,14 @@
+import type { ESLint } from 'eslint'
+
+// @ts-expect-error missing type info
+import eslintPluginTailwindCSS from 'eslint-plugin-tailwindcss'
+
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_HTML, GLOB_POSTCSS, GLOB_SRC, GLOB_STYLE } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginTailwindCSS = memo(eslintPluginTailwindCSS, 'eslint-plugin-tailwindcss') as ESLint.Plugin
 
 const name = getFlatConfigName('tailwindcss')
 const files: string[] = [GLOB_SRC, GLOB_STYLE, GLOB_POSTCSS, GLOB_HTML]
@@ -13,7 +19,7 @@ export function tailwindcss(): TypedFlatConfigItem[] {
       name: name.setup,
       files,
       plugins: {
-        tailwindcss: plugins['pluginTailwindCSS'],
+        tailwindcss: pluginTailwindCSS,
       },
       settings: {
         tailwindcss: {

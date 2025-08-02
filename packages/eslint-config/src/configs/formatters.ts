@@ -1,3 +1,5 @@
+import eslintPluginFormat from 'eslint-plugin-format'
+
 import type { InternalOptionsFormat, OptionsFormat } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
@@ -16,8 +18,7 @@ import {
   GLOB_YAML,
 } from '../globs.js'
 import parsers from '../parsers.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName, loadLocalFile } from '../utils/index.js'
+import { getFlatConfigName, loadLocalFile, memo } from '../utils/index.js'
 
 type DPrintFormatterConfig = Record<string, string | number | boolean>
 
@@ -50,6 +51,8 @@ const trailingCommasMap: Record<'none' | 'all' | 'multiline', DPrintTrailingComm
   all: 'always',
   multiline: 'onlyMultiLine',
 }
+
+const pluginFormat = memo(eslintPluginFormat, 'eslint-plugin-format')
 
 const name = getFlatConfigName('formatters')
 
@@ -87,7 +90,7 @@ export async function formatters(
     {
       name: name.setup,
       plugins: {
-        format: plugins['pluginFormat'],
+        format: pluginFormat,
       },
     },
     {

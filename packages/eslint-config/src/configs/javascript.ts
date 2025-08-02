@@ -1,15 +1,23 @@
-import type { Linter } from 'eslint'
+import type { ESLint, Linter } from 'eslint'
 
 import js from '@eslint/js'
-import { createNodeResolver } from 'eslint-plugin-import-x'
+import eslintPluginAntfu from 'eslint-plugin-antfu'
+// @ts-expect-error missing type info
+import eslintPluginAutofix from 'eslint-plugin-autofix'
+import eslintPluginImportX, { createNodeResolver } from 'eslint-plugin-import-x'
+import eslintPluginUnusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 
 import type { OptionsJavaScript } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import { GLOB_JS, GLOB_JSX } from '../globs.js'
-import plugins from '../plugins.js'
-import { getFlatConfigName } from '../utils/index.js'
+import { getFlatConfigName, memo } from '../utils/index.js'
+
+const pluginAntfu = memo(eslintPluginAntfu, 'eslint-plugin-antfu')
+const pluginAutofix = memo(eslintPluginAutofix, 'eslint-plugin-autofix') as ESLint.Plugin
+const pluginImportX = memo(eslintPluginImportX, 'eslint-plugin-import-x')
+const pluginUnusedImports = memo(eslintPluginUnusedImports, 'eslint-plugin-unused-imports')
 
 const name = getFlatConfigName('javascript')
 const files: string[] = [GLOB_JS, GLOB_JSX]
@@ -34,10 +42,10 @@ export function javascript(options: OptionsJavaScript = {}): TypedFlatConfigItem
       name: name.setup,
       files,
       plugins: {
-        'import-x': plugins['pluginImportX'],
-        'unused-imports': plugins['pluginUnusedImports'],
-        autofix: plugins['pluginAutofix'],
-        antfu: plugins['pluginAntfu'],
+        'import-x': pluginImportX,
+        'unused-imports': pluginUnusedImports,
+        autofix: pluginAutofix,
+        antfu: pluginAntfu,
       },
       linterOptions: {
         reportUnusedDisableDirectives: true,
