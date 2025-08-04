@@ -1,5 +1,3 @@
-import type { Linter } from 'eslint'
-
 import eslintPluginJson from '@eslint/json'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
 
@@ -14,14 +12,6 @@ const pluginJson = memo(eslintPluginJson, 'eslint-plugin-json')
 const pluginJsonc = memo(eslintPluginJsonc, 'eslint-plugin-jsonc')
 
 const name = getFlatConfigName('json')
-
-const jsoncRecommendedWithJsonRuleList = pluginJsonc.configs['flat/recommended-with-json'].map(
-  (config) => config.rules,
-)
-const jsoncRecommendedWithJsonRules = Object.assign(
-  {},
-  ...jsoncRecommendedWithJsonRuleList,
-) as Record<string, Linter.RuleEntry>
 
 export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
   const { extraFiles = [], stylistic = { indentWidth: 2 } } = options
@@ -50,16 +40,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
       rules: {
         // @eslint/json
         // https://github.com/eslint/json
-        'json/no-duplicate-keys': 'error',
-        'json/no-empty-keys': 'error',
-        'json/no-unsafe-values': 'error',
-        'json/no-unnormalized-keys': 'error',
-        'json/top-level-interop': 'error',
-
-        // eslint-plugin-jsonc
-        // https://github.com/ota-meshi/eslint-plugin-jsonc
-        // flat/recommended-with-json
-        ...jsoncRecommendedWithJsonRules,
+        ...pluginJson.configs.recommended.rules,
       },
     },
     {
@@ -67,6 +48,12 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
       files,
       rules: stylistic
         ? {
+          // @eslint/json
+          // https://github.com/eslint/json
+          'json/sort-keys': ['error', 'asc', { natural: true }],
+
+          // eslint-plugin-jsonc
+          // https://github.com/ota-meshi/eslint-plugin-jsonc
           // Copied from antfu/eslint-config
           // Ref: https://github.com/antfu/eslint-config/blob/5d0c2a5ef25a7bc3a2d6d55c1ce157cc47b0bf55/src/configs/jsonc.ts#L70
           'jsonc/array-bracket-spacing': ['error', 'never'],
@@ -76,10 +63,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
           'jsonc/key-spacing': ['error', { afterColon: true, beforeColon: false }],
           'jsonc/object-curly-newline': ['error', { consistent: true, multiline: true }],
           'jsonc/object-curly-spacing': ['error', 'always'],
-          'jsonc/object-property-newline': [
-            'error',
-            { allowMultiplePropertiesPerLine: true },
-          ],
+          'jsonc/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
           'jsonc/quote-props': 'error',
           'jsonc/quotes': 'error',
         }
@@ -91,6 +75,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
       // Copied from antfu/eslint-config
       // Ref: https://github.com/antfu/eslint-config/blob/5d0c2a5ef25a7bc3a2d6d55c1ce157cc47b0bf55/src/configs/sort.ts#L13
       rules: {
+        'json/sort-keys': 'off',
         'jsonc/sort-array-values': [
           'error',
           {
@@ -187,6 +172,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
       // Copied from antfu/eslint-config
       // Ref: https://github.com/antfu/eslint-config/blob/5d0c2a5ef25a7bc3a2d6d55c1ce157cc47b0bf55/src/configs/sort.ts#L121
       rules: {
+        'json/sort-keys': 'off',
         'jsonc/sort-keys': [
           'error',
           {
