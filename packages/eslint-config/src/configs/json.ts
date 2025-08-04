@@ -30,6 +30,7 @@ export function json(options: OptionsJson = {}): TypedFlatConfigItem[] {
         json: pluginJson,
         jsonc: pluginJsonc,
       },
+      language: 'json/json',
       languageOptions: {
         parser: parsers['parserJsonc'],
       },

@@ -4,6 +4,7 @@ import config from './packages/eslint-config/src/index.js'
 
 export default config(
   {
+    ignores: ['.vscode'],
     javascript: {
       env: {
         browser: false,
@@ -21,9 +22,9 @@ export default config(
     },
   },
   {
-    files: ['.vscode/*.json'],
+    files: ['dprint.json'],
     rules: {
-      'jsonc/no-comments': 'off',
+      'json/sort-keys': 'off',
     },
   },
   {
