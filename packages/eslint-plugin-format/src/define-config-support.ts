@@ -7,4 +7,5 @@ declare module 'eslint-define-config' {
   export interface CustomRuleOptions extends RuleOptions {}
 }
 
+// eslint-disable-next-line unicorn/require-module-specifiers -- This is a type definition
 export {}
