@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import('lint-staged').Config} */
+/** @type {import('lint-staged').Configuration} */
 const config = {
   '*.?([cm])[jt]s?(x)': ['eslint --fix'],
   '*.json?(c|5)': ['eslint --fix'],
