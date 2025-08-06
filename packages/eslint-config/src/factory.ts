@@ -12,6 +12,7 @@ import type {
   OptionsJson,
   OptionsNodeJs,
   OptionsReact,
+  OptionsTailwindCss,
   OptionsTypeScript,
 } from './options.js'
 import type { Awaitable, ConfigNames, TypedFlatConfigItem } from './types.js'
@@ -58,6 +59,7 @@ interface ESLintConfigOptions {
   json?: SharedOptions<OptionsExtraFiles> | boolean
   react?: SharedOptions<OptionsReact> | boolean
   node?: SharedOptions<OptionsNodeJs> | boolean
+  tailwindcss?: SharedOptions<OptionsTailwindCss> | boolean
 }
 
 function enabled(options: SharedOptions | boolean | undefined, defaults = false): boolean {
@@ -141,8 +143,8 @@ export async function config(
   }
 
   // Tailwind CSS configs
-  if (enabled(undefined, isPackageExists('tailwindcss'))) {
-    configs.push(tailwindcss())
+  if (enabled(options?.tailwindcss, isPackageExists('tailwindcss'))) {
+    configs.push(tailwindcss(configOptions(options?.tailwindcss)))
   }
 
   // Other configs and disable some rules for specific files

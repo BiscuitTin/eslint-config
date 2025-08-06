@@ -77,6 +77,7 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-antfu": "^3.1.1",
     "eslint-plugin-autofix": "^2.2.0",
+    "eslint-plugin-better-tailwindcss": "^3.7.4",
     "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-jsonc": "^2.20.1",
@@ -86,21 +87,20 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-regexp": "^2.9.1",
-    "eslint-plugin-tailwindcss": "^3.18.2",
     "eslint-plugin-unicorn": "^60.0.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "find-up": "^7.0.0",
     "globals": "^16.3.0",
     "jsonc-eslint-parser": "^2.4.0",
     "local-pkg": "^1.1.1",
-    "typescript-eslint": "^8.38.0"
+    "typescript-eslint": "^8.39.0"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.1.0",
-    "@typescript-eslint/parser": "^8.38.0",
+    "@typescript-eslint/parser": "^8.39.0",
     "dprint": "^0.50.1",
     "eslint": "^9.32.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.11",
     "ts-api-utils": "^2.1.0",
     "typescript": "^5.8.3"
   }

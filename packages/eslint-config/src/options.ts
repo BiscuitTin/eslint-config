@@ -230,3 +230,24 @@ export interface OptionsFormat extends StylisticConfig {
    */
   dprintConfigPath?: string
 }
+
+interface OptionsTailwindCssV4 {
+  /**
+   * The path to the entry file of the css based tailwind config (eg: `src/global.css`).
+   * If not specified, the plugin will fall back to the default configuration.
+   * The tailwind config is used to determine the sorting order.
+   */
+  entryPoint: string
+}
+
+interface OptionsTailwindCssV3 {
+  /**
+   * The path to the tailwind.config.js file. If not specified, the plugin will try to
+   * find it automatically or falls back to the default configuration.
+   * The tailwind config is used to determine the sorting order.
+   * For tailwindcss v4 and the css based config, use the `entryPoint` option instead.
+   */
+  tailwindConfig?: string
+}
+
+export type OptionsTailwindCss = OptionsTailwindCssV3 | OptionsTailwindCssV4

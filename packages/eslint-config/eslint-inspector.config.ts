@@ -7,4 +7,5 @@ export default config({
   json: true,
   react: true,
   node: true,
+  tailwindcss: true,
 })
