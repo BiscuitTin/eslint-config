@@ -100,7 +100,7 @@ export function react(options: OptionsReact = {}): TypedFlatConfigItem[] {
 
         // @eslint-react/eslint-plugin
         // https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
-        ...pluginReact.configs.recommended.rules,
+        ...eslintPluginReact.configs.x.rules,
         '@eslint-react/ensure-forward-ref-using-ref': 'error',
         '@eslint-react/no-duplicate-jsx-props': 'error',
         '@eslint-react/no-duplicate-key': 'error',
