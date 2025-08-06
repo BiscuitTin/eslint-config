@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.1.0...eslint-config-v0.1.1) (2025-08-06)
+
+
+### Bug Fixes
+
+* eslint-plugin-react-x rules import ([#160](https://github.com/BiscuitTin/eslint-config/issues/160)) ([6412a91](https://github.com/BiscuitTin/eslint-config/commit/6412a9195362704f441ea56a12d892f5284f69c7))
+
 ## [0.1.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.0.7...eslint-config-v0.1.0) (2025-08-06)
 
 
