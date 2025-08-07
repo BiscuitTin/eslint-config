@@ -106,6 +106,6 @@
     "eslint": "^9.32.0",
     "tailwindcss": "^4.1.11",
     "ts-api-utils": "^2.1.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   }
 }
