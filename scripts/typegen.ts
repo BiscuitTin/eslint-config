@@ -48,7 +48,7 @@ const configs = await combine(
   jsx(),
   nextJs(),
   nodeJs(),
-  react(),
+  react({ stylistic: true, typeCheck: true, reactCompiler: true }),
   regexp(),
   tailwindcss(),
   typescript(),

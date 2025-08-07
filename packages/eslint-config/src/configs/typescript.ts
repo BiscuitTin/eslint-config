@@ -1,6 +1,5 @@
 import type { Linter } from 'eslint'
 
-import eslintPluginReact from '@eslint-react/eslint-plugin'
 import { createTypeScriptImportResolver, defaultExtensions } from 'eslint-import-resolver-typescript'
 import eslintPluginAntfu from 'eslint-plugin-antfu'
 import eslintPluginImportX, { configs as importXConfigs } from 'eslint-plugin-import-x'
@@ -14,12 +13,9 @@ import { GLOB_TS, GLOB_TSX } from '../globs.js'
 import parsers from '../parsers.js'
 import { getFlatConfigName, memo } from '../utils/index.js'
 
-const reactPlugins = eslintPluginReact.configs.all.plugins
 const pluginAntfu = memo(eslintPluginAntfu, 'eslint-plugin-antfu')
 const pluginImportX = memo(eslintPluginImportX, 'eslint-plugin-import-x')
-const pluginReact = memo(reactPlugins['@eslint-react'], 'eslint-plugin-react-x')
-const pluginReactDom = memo(reactPlugins['@eslint-react/dom'], 'eslint-plugin-react-dom')
-const pluginTypescript = memo(eslintPluginTypescript, 'typescript-eslint')
+const pluginTypescript = memo(eslintPluginTypescript, '@typescript-eslint/eslint-plugin')
 
 const name = getFlatConfigName('typescript')
 
@@ -48,7 +44,6 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
     tsconfigRootDir = process.cwd(),
     allowDefaultProject = [],
     extraFileExtensions = [],
-    reactTypeCheck = false,
   } = options
 
   const files: string[] = [
@@ -182,34 +177,6 @@ export function typescript(options: OptionsTypeScript = {}): TypedFlatConfigItem
         // https://github.com/antfu/eslint-plugin-antfu
         'antfu/no-ts-export-equal': 'error',
       },
-    },
-    {
-      name: `${name.base}/react-type-checked`,
-      files,
-      plugins: {
-        '@eslint-react': pluginReact,
-        '@eslint-react/dom': pluginReactDom,
-      },
-      rules: reactTypeCheck
-        ? {
-          // Disables checking an asynchronous function passed as a JSX attribute expected to be a function that returns `void`
-          '@typescript-eslint/no-misused-promises': ['error', {
-            checksVoidReturn: { attributes: false },
-          }],
-
-          // @eslint-react/eslint-plugin
-          // https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
-          // pluginReact.configs.['recommended-typescript'].rules
-          '@eslint-react/dom/no-unknown-property': 'off',
-          '@eslint-react/no-duplicate-jsx-props': 'off',
-          '@eslint-react/use-jsx-vars': 'off',
-
-          // pluginReact.configs.['recommended-type-checked'].rules
-          // https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
-          '@eslint-react/no-leaked-conditional-rendering': 'error',
-          '@eslint-react/prefer-read-only-props': 'warn',
-        }
-        : {},
     },
     {
       files: ['**/*.cts'],
