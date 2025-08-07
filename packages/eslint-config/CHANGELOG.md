@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.1.1...eslint-config-v0.2.0) (2025-08-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* completely rewrite react eslint rules ([#162](https://github.com/BiscuitTin/eslint-config/issues/162))
+
+### Features
+
+* completely rewrite react eslint rules ([#162](https://github.com/BiscuitTin/eslint-config/issues/162)) ([74628c2](https://github.com/BiscuitTin/eslint-config/commit/74628c26a360cf43320d457ae90829e1c2f49187))
+
+
+### Bug Fixes
+
+* comment non-exported rule in react hooks plugin and make nextjs rules can enabled manually ([#164](https://github.com/BiscuitTin/eslint-config/issues/164)) ([632b0c0](https://github.com/BiscuitTin/eslint-config/commit/632b0c06dd3ea0cd18f6aca29d442a281faed51e))
+
 ## [0.1.1](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.1.0...eslint-config-v0.1.1) (2025-08-06)
 
 
