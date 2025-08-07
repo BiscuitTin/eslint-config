@@ -283,7 +283,7 @@ const configReactCompiler: TypedFlatConfigItem = {
   rules: {
     // eslint-plugin-react-hooks
     // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
-    'react-hooks/react-compiler': 'error',
+    // 'react-hooks/react-compiler': 'error', // TODO: Enable when eslint-plugin-react-hooks v6 is released
 
     // eslint-plugin-react-compiler
     // https://github.com/facebook/react/tree/main/compiler/packages/eslint-plugin-react-compiler
