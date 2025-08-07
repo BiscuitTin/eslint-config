@@ -5,7 +5,8 @@ export default config({
   javascript: true,
   typescript: true,
   json: true,
-  react: true,
+  react: { enable: true, stylistic: true, typeCheck: true, reactCompiler: true },
+  nextjs: true,
   node: true,
   tailwindcss: true,
 })

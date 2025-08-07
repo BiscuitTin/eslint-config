@@ -58,6 +58,7 @@ interface ESLintConfigOptions {
   typescript?: SharedOptions<OptionsTypeScript> | boolean
   json?: SharedOptions<OptionsExtraFiles> | boolean
   react?: SharedOptions<OptionsReact> | boolean
+  nextjs?: SharedOptions | boolean
   node?: SharedOptions<OptionsNodeJs> | boolean
   tailwindcss?: SharedOptions<OptionsTailwindCss> | boolean
 }
@@ -133,7 +134,7 @@ export async function config(
   }
 
   // Next.js configs
-  if (enabled(undefined, isPackageExists('next'))) {
+  if (enabled(options?.nextjs, isPackageExists('next'))) {
     configs.push(nextJs())
   }
 
