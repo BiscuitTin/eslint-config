@@ -95,7 +95,6 @@ export async function config(
   const configs: Awaitable<TypedFlatConfigItem[]>[] = []
 
   const enableTypeScript = enabled(options?.typescript, isPackageExists('typescript'))
-  const enableReact = enabled(options?.react, isPackageExists('react'))
 
   // Base configs
   const importsOption = enableTypeScript ? configOptions(options?.typescript) : {}
@@ -108,9 +107,7 @@ export async function config(
 
   // TypeScript configs
   if (enableTypeScript) {
-    configs.push(
-      typescript(configOptions(options?.typescript, { reactTypeCheck: enableReact })),
-    )
+    configs.push(typescript(configOptions(options?.typescript)))
   }
 
   // Json file configs
@@ -120,20 +117,23 @@ export async function config(
   }
 
   // React configs
-  if (enableReact) {
+  if (enabled(options?.react, isPackageExists('react') || isPackageExists('@types/react'))) {
+    const enableReactCompiler = isPackageExists('babel-plugin-react-compiler')
+      || isPackageExists('react-compiler-webpack')
+
     configs.push(
       jsx(),
       react(
         configOptions(options?.react, {
-          reactCompiler: isPackageExists('babel-plugin-react-compiler')
-            || isPackageExists('react-compiler-webpack'),
+          typeCheck: enableTypeScript,
+          reactCompiler: enableReactCompiler,
         }),
       ),
     )
   }
 
   // Next.js configs
-  if (enabled(options?.react, isPackageExists('next'))) {
+  if (enabled(undefined, isPackageExists('next'))) {
     configs.push(nextJs())
   }
 

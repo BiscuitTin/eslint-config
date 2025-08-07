@@ -182,13 +182,6 @@ export interface OptionsTypeScript extends OptionsIsInEditor {
    * @see [@typescript-eslint/parser#extraFileExtensions](https://typescript-eslint.io/packages/parser/#extrafileextensions)
    */
   extraFileExtensions?: string[]
-
-  /**
-   * Enable [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin) type-checking rules.
-   *
-   * @default `true` when `react` is enabled, otherwise `false`
-   */
-  reactTypeCheck?: boolean
 }
 
 export type OptionsJson = OptionsExtraFiles & OptionsStylistic
@@ -200,6 +193,13 @@ export interface OptionsReact {
    * @default true
    */
   stylistic?: boolean
+
+  /**
+   * Enable [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin) type-checking rules.
+   *
+   * @default `true` when TypeScript is installed, otherwise `false`
+   */
+  typeCheck?: boolean
 
   /**
    * Enable React Compiler rules.
