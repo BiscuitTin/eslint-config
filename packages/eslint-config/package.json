@@ -1,7 +1,7 @@
 {
   "name": "@biscuittin/eslint-config",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A collection of ESLint configurations for Biscuit Tin projects.",
   "author": "Biscuit Tin <opensource@biscuitt.in>",
   "license": "MIT",
