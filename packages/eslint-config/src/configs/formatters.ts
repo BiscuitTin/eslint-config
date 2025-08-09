@@ -4,7 +4,6 @@ import type { InternalOptionsFormat, OptionsFormat } from '../options.js'
 import type { TypedFlatConfigItem } from '../types.js'
 
 import {
-  GLOB_ASTRO,
   GLOB_HTML,
   GLOB_JSON,
   GLOB_JSON5,
@@ -13,8 +12,6 @@ import {
   GLOB_POSTCSS,
   GLOB_SRC,
   GLOB_STYLE,
-  GLOB_SVELTE,
-  GLOB_VUE,
   GLOB_YAML,
 } from '../globs.js'
 import parsers from '../parsers.js'
@@ -179,7 +176,7 @@ export async function formatters(
     },
     {
       name: `${name.rules}/markup`,
-      files: [GLOB_HTML, GLOB_VUE, GLOB_SVELTE, GLOB_ASTRO],
+      files: [GLOB_HTML],
       languageOptions: {
         parser: parsers['parserPlain'],
       },
