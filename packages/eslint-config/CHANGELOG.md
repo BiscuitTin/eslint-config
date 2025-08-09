@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.2.0...eslint-config-v0.3.0) (2025-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop svelte,vue,astro,xml support ([#166](https://github.com/BiscuitTin/eslint-config/issues/166))
+
+### Features
+
+* drop svelte,vue,astro,xml support ([#166](https://github.com/BiscuitTin/eslint-config/issues/166)) ([0a10e27](https://github.com/BiscuitTin/eslint-config/commit/0a10e27cef147338d9e870fb70df29faecdb904e))
+
 ## [0.2.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.1.1...eslint-config-v0.2.0) (2025-08-07)
 
 
