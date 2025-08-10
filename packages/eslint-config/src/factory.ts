@@ -75,8 +75,8 @@ function configOptions<T extends SharedOptions>(
   defaultOptions?: SharedOptions<T>,
 ): ConfigOptions<T> {
   const isInEditor = isInEditorEnv()
-  if (options === undefined) return { isInEditor } as ConfigOptions<T>
-  if (typeof options === 'boolean') return { isInEditor } as ConfigOptions<T>
+  if (options === undefined) return { ...defaultOptions, isInEditor } as ConfigOptions<T>
+  if (typeof options === 'boolean') return { ...defaultOptions, isInEditor } as ConfigOptions<T>
   return { ...defaultOptions, ...options, isInEditor } as ConfigOptions<T>
 }
 
@@ -121,16 +121,11 @@ export async function config(
   if (enabled(options?.react, isPackageExists('react') || isPackageExists('@types/react'))) {
     const enableReactCompiler = isPackageExists('babel-plugin-react-compiler')
       || isPackageExists('react-compiler-webpack')
-
-    configs.push(
-      jsx(),
-      react(
-        configOptions(options?.react, {
-          typeCheck: enableTypeScript,
-          reactCompiler: enableReactCompiler,
-        }),
-      ),
-    )
+    const reactOptions = configOptions(options?.react, {
+      typeCheck: enableTypeScript,
+      reactCompiler: enableReactCompiler,
+    })
+    configs.push(jsx(), react(reactOptions))
   }
 
   // Next.js configs
@@ -154,13 +149,10 @@ export async function config(
   // Formatter configs
   if (enabled(options?.format, isPackageExists('dprint'))) {
     const jsonOptions = configOptions(options?.json)
-    configs.push(
-      formatters(
-        configOptions<OptionsFormat & InternalOptionsFormat>(options?.format, {
-          extraJsonFiles: jsonOptions.extraFiles,
-        }),
-      ),
-    )
+    const formatterOptions = configOptions<OptionsFormat & InternalOptionsFormat>(options?.format, {
+      extraJsonFiles: jsonOptions.extraFiles,
+    })
+    configs.push(formatters(formatterOptions))
   }
 
   let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>(...configs)
