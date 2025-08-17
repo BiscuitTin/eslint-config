@@ -10,6 +10,7 @@ export default defineConfig({
   },
   attw: true,
   clean: true,
+  tsconfig: '../../tsconfigs/tsconfig.default.json',
   dts: true,
   exports: true,
   publint: true,
