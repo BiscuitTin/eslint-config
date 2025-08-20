@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.3.0...eslint-config-v0.3.1) (2025-08-20)
+
+
+### Features
+
+* always return default config options ([#168](https://github.com/BiscuitTin/eslint-config/issues/168)) ([42418a6](https://github.com/BiscuitTin/eslint-config/commit/42418a687b611b96e3859527ba8c516dd1774940))
+
 ## [0.3.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.2.0...eslint-config-v0.3.0) (2025-08-09)
 
 
