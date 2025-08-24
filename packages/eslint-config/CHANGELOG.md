@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.3.1...eslint-config-v0.3.2) (2025-08-24)
+
+
+### Features
+
+* enable eslint react no useless fragment rule ([#182](https://github.com/BiscuitTin/eslint-config/issues/182)) ([ca0ed41](https://github.com/BiscuitTin/eslint-config/commit/ca0ed41f821a0d49c26599028ea5603171a58f8b))
+
 ## [0.3.1](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.3.0...eslint-config-v0.3.1) (2025-08-20)
 
 
