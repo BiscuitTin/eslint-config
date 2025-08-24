@@ -141,7 +141,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-unused-state': 'warn',
     '@eslint-react/no-use-context': 'warn',
     '@eslint-react/no-useless-forward-ref': 'error',
-    '@eslint-react/no-useless-fragment': 'off',
+    '@eslint-react/no-useless-fragment': 'error',
     '@eslint-react/prefer-destructuring-assignment': 'off', // stylistic
     '@eslint-react/prefer-react-namespace-import': 'off', // stylistic
     '@eslint-react/prefer-read-only-props': 'off', // type checking
@@ -214,6 +214,7 @@ const configStylistic: TypedFlatConfigItem = {
     '@eslint-react/prefer-shorthand-fragment': 'off',
     '@eslint-react/avoid-shorthand-boolean': 'off',
     '@eslint-react/avoid-shorthand-fragment': 'error',
+    '@eslint-react/naming-convention/filename': 'off', // ['error', 'kebab-case'], already handled by unicorn
 
     // @stylistic/eslint-plugin
     // https://github.com/eslint-stylistic/eslint-stylistic/tree/main/packages/eslint-plugin-jsx
