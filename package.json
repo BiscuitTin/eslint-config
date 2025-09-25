@@ -41,7 +41,7 @@
     "lint-staged": "^16.2.0",
     "publint": "^0.3.13",
     "tailwindcss": "^4.1.13",
-    "tsdown": "0.14.2",
+    "tsdown": "0.15.4",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
