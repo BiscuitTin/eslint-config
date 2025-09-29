@@ -92,9 +92,12 @@ const configCommonRules: TypedFlatConfigItem = {
     // @eslint-react/eslint-plugin - eslint-plugin-react-x
     // https://eslint-react.xyz/docs/rules/overview#x-rules
     '@eslint-react/jsx-key-before-spread': 'warn',
+    '@eslint-react/jsx-no-comment-textnodes': 'error',
     '@eslint-react/jsx-no-duplicate-props': 'error',
     '@eslint-react/jsx-no-iife': 'off',
     '@eslint-react/jsx-no-undef': 'off',
+    '@eslint-react/jsx-shorthand-boolean': 'off', // stylistic
+    '@eslint-react/jsx-shorthand-fragment': 'off', // stylistic
     '@eslint-react/jsx-uses-react': 'warn',
     '@eslint-react/jsx-uses-vars': 'warn',
     '@eslint-react/no-access-state-in-setstate': 'error',
@@ -103,12 +106,10 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-children-for-each': 'error',
     '@eslint-react/no-children-map': 'warn',
     '@eslint-react/no-children-only': 'error',
-    '@eslint-react/no-children-prop': 'off',
+    '@eslint-react/no-children-prop': 'warn',
     '@eslint-react/no-children-to-array': 'error',
-    '@eslint-react/no-class-component': 'off',
+    '@eslint-react/no-class-component': 'error',
     '@eslint-react/no-clone-element': 'error',
-    '@eslint-react/no-comment-textnodes': 'error',
-    '@eslint-react/no-complex-conditional-rendering': 'off',
     '@eslint-react/no-component-will-mount': 'error',
     '@eslint-react/no-component-will-receive-props': 'error',
     '@eslint-react/no-component-will-update': 'error',
@@ -117,6 +118,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-default-props': 'error',
     '@eslint-react/no-direct-mutation-state': 'error',
     '@eslint-react/no-duplicate-key': 'error',
+    '@eslint-react/no-forbidden-props': 'off',
     '@eslint-react/no-forward-ref': 'warn',
     '@eslint-react/no-implicit-key': 'error',
     '@eslint-react/no-leaked-conditional-rendering': 'off', // type checking
@@ -132,23 +134,25 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-set-state-in-component-did-update': 'warn',
     '@eslint-react/no-set-state-in-component-will-update': 'warn',
     '@eslint-react/no-string-refs': 'error',
+    '@eslint-react/no-unnecessary-key': 'warn',
+    '@eslint-react/no-unnecessary-use-callback': 'error',
+    '@eslint-react/no-unnecessary-use-memo': 'error',
+    '@eslint-react/no-unnecessary-use-prefix': 'error',
     '@eslint-react/no-unsafe-component-will-mount': 'warn',
     '@eslint-react/no-unsafe-component-will-receive-props': 'warn',
     '@eslint-react/no-unsafe-component-will-update': 'warn',
     '@eslint-react/no-unstable-context-value': 'error',
     '@eslint-react/no-unstable-default-props': 'warn',
     '@eslint-react/no-unused-class-component-members': 'warn',
+    '@eslint-react/no-unused-props': 'off', // type checking
     '@eslint-react/no-unused-state': 'warn',
     '@eslint-react/no-use-context': 'warn',
     '@eslint-react/no-useless-forward-ref': 'error',
     '@eslint-react/no-useless-fragment': 'error',
     '@eslint-react/prefer-destructuring-assignment': 'off', // stylistic
-    '@eslint-react/prefer-react-namespace-import': 'off', // stylistic
+    '@eslint-react/prefer-namespace-import': 'off', // stylistic
     '@eslint-react/prefer-read-only-props': 'off', // type checking
-    '@eslint-react/prefer-shorthand-boolean': 'off', // stylistic
-    '@eslint-react/prefer-shorthand-fragment': 'off', // stylistic
-    '@eslint-react/avoid-shorthand-boolean': 'off', // stylistic
-    '@eslint-react/avoid-shorthand-fragment': 'off', // stylistic
+    '@eslint-react/prefer-use-state-lazy-initialization': 'warn',
 
     // @eslint-react/eslint-plugin - eslint-plugin-react-dom
     // https://eslint-react.xyz/docs/rules/overview#dom-rules
@@ -163,6 +167,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/dom/no-render': 'error',
     '@eslint-react/dom/no-render-return-value': 'error',
     '@eslint-react/dom/no-script-url': 'warn',
+    '@eslint-react/dom/no-string-style-prop': 'warn',
     '@eslint-react/dom/no-unknown-property': 'off',
     '@eslint-react/dom/no-unsafe-iframe-sandbox': 'warn',
     // Update as of 2021: All current versions of major browsers now automatically use the
@@ -172,6 +177,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/dom/no-unsafe-target-blank': 'off',
     '@eslint-react/dom/no-use-form-state': 'error',
     '@eslint-react/dom/no-void-elements-with-children': 'error',
+    '@eslint-react/dom/prefer-namespace-import': 'error',
 
     // @eslint-react/eslint-plugin - eslint-plugin-react-web-api
     // https://eslint-react.xyz/docs/rules/overview#web-api-rules
@@ -183,11 +189,6 @@ const configCommonRules: TypedFlatConfigItem = {
     // @eslint-react/eslint-plugin - eslint-plugin-react-hooks-extra
     // https://eslint-react.xyz/docs/rules/overview#hooks-extra-rules
     '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'error',
-    '@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect': 'error',
-    '@eslint-react/hooks-extra/no-unnecessary-use-callback': 'error',
-    '@eslint-react/hooks-extra/no-unnecessary-use-memo': 'error',
-    '@eslint-react/hooks-extra/no-unnecessary-use-prefix': 'error',
-    '@eslint-react/hooks-extra/prefer-use-state-lazy-initialization': 'warn',
 
     // @eslint-react/eslint-plugin - eslint-plugin-react-naming-convention
     // https://eslint-react.xyz/docs/rules/overview#naming-convention-rules
@@ -209,11 +210,9 @@ const configStylistic: TypedFlatConfigItem = {
     // @eslint-react/eslint-plugin
     // https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
     '@eslint-react/prefer-destructuring-assignment': 'error',
-    '@eslint-react/prefer-react-namespace-import': 'warn',
-    '@eslint-react/prefer-shorthand-boolean': 'error',
-    '@eslint-react/prefer-shorthand-fragment': 'off',
-    '@eslint-react/avoid-shorthand-boolean': 'off',
-    '@eslint-react/avoid-shorthand-fragment': 'error',
+    '@eslint-react/prefer-namespace-import': 'warn',
+    '@eslint-react/jsx-shorthand-boolean': 'error',
+    '@eslint-react/jsx-shorthand-fragment': 'off',
     '@eslint-react/naming-convention/filename': 'off', // ['error', 'kebab-case'], already handled by unicorn
 
     // @stylistic/eslint-plugin
@@ -262,11 +261,13 @@ const configTypeCheck: TypedFlatConfigItem = {
   rules: {
     // @eslint-react/eslint-plugin
     // https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
+    '@eslint-react/dom/no-string-style-prop': 'off',
     '@eslint-react/dom/no-unknown-property': 'off',
     '@eslint-react/jsx-no-duplicate-props': 'off',
     '@eslint-react/jsx-uses-react': 'off',
     '@eslint-react/jsx-uses-vars': 'off',
     '@eslint-react/no-leaked-conditional-rendering': 'error',
+    '@eslint-react/no-unused-props': 'warn',
     '@eslint-react/prefer-read-only-props': 'warn',
 
     // typescript-eslint
