@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.3.2...eslint-config-v0.4.0) (2025-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to eslint react v2 ([#205](https://github.com/BiscuitTin/eslint-config/issues/205))
+
+### Features
+
+* migrate to eslint react v2 ([#205](https://github.com/BiscuitTin/eslint-config/issues/205)) ([ee8ee09](https://github.com/BiscuitTin/eslint-config/commit/ee8ee09f8afc7ddb1cbc990a5fd12359e46c5af5))
+
 ## [0.3.2](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.3.1...eslint-config-v0.3.2) (2025-08-24)
 
 
