@@ -21,7 +21,7 @@
     "test": "vitest --run --logHeapUsage",
     "coverage": "vitest run --coverage",
     "typegen": "tsx scripts/typegen.ts",
-    "lint": "eslint --cache .",
+    "lint": "eslint .",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -35,10 +35,10 @@
     "dprint": "^0.50.2",
     "eslint": "^9.36.0",
     "eslint-typegen": "^2.3.0",
-    "happy-dom": "^18.0.1",
+    "happy-dom": "^19.0.1",
     "husky": "^9.1.7",
     "jiti": "^2.6.0",
-    "lint-staged": "^16.2.1",
+    "lint-staged": "^16.2.3",
     "publint": "^0.3.13",
     "tailwindcss": "^4.1.13",
     "tsdown": "^0.15.5",
