@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.0...eslint-config-v0.4.1) (2025-09-30)
+
+
+### Bug Fixes
+
+* add back the eslint-react dom-prefer-namespace-import rule ([#215](https://github.com/BiscuitTin/eslint-config/issues/215)) ([619cca1](https://github.com/BiscuitTin/eslint-config/commit/619cca18303f2537efb07bb72621c533e1e50768))
+* remove non-existent rules ([#212](https://github.com/BiscuitTin/eslint-config/issues/212)) ([75bf6ac](https://github.com/BiscuitTin/eslint-config/commit/75bf6ac5aea41c865c67e58c4ac14c2ef8d21da3))
+
 ## [0.4.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.3.2...eslint-config-v0.4.0) (2025-09-29)
 
 
