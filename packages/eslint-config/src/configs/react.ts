@@ -177,7 +177,6 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/dom/no-unsafe-target-blank': 'off',
     '@eslint-react/dom/no-use-form-state': 'error',
     '@eslint-react/dom/no-void-elements-with-children': 'error',
-    '@eslint-react/dom/prefer-namespace-import': 'error',
 
     // @eslint-react/eslint-plugin - eslint-plugin-react-web-api
     // https://eslint-react.xyz/docs/rules/overview#web-api-rules
