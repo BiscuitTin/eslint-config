@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.1...eslint-config-v0.4.2) (2025-10-13)
+
+
+### Features
+
+* update dependencies ([#223](https://github.com/BiscuitTin/eslint-config/issues/223)) ([bb74fad](https://github.com/BiscuitTin/eslint-config/commit/bb74fad40173cbf0d04895cdff2b58195e2bb3db))
+
 ## [0.4.1](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.0...eslint-config-v0.4.1) (2025-09-30)
 
 
