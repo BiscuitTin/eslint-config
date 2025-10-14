@@ -26,7 +26,7 @@ jobs:
         if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
 
       - name: Setup target Node.js to enable Corepack
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
         if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
@@ -40,7 +40,7 @@ jobs:
           pnpm --version
         if: ${{steps.release.outputs['packages/eslint-config--release_created'] || steps.release.outputs['packages/eslint-parser-plain--release_created'] || steps.release.outputs['packages/eslint-plugin-format--release_created']}}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
           cache: pnpm
