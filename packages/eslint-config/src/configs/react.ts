@@ -2,7 +2,7 @@ import { eslint_plugin_jsx_a11y_minimal as eslintPluginJsxA11y } from '@eslint-s
 import eslintPluginStylistic from '@stylistic/eslint-plugin'
 import * as eslintPluginReactCompiler from 'eslint-plugin-react-compiler'
 import eslintPluginReactDom from 'eslint-plugin-react-dom'
-import * as eslintPluginReactHooks from 'eslint-plugin-react-hooks'
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 import eslintPluginReactHooksExtra from 'eslint-plugin-react-hooks-extra'
 import eslintPluginReactNamingConvention from 'eslint-plugin-react-naming-convention'
 import eslintPluginReactRefresh from 'eslint-plugin-react-refresh'
