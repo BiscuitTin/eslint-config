@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.2...eslint-config-v0.4.3) (2025-10-14)
+
+
+### Bug Fixes
+
+* eslint-plugin-react-hooks v7 use default import ([#230](https://github.com/BiscuitTin/eslint-config/issues/230)) ([cef3b53](https://github.com/BiscuitTin/eslint-config/commit/cef3b5354c2d44be56f1c3929fc98d0d55c80e54))
+
 ## [0.4.2](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.1...eslint-config-v0.4.2) (2025-10-13)
 
 
