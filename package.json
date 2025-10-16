@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@10.18.2",
+  "packageManager": "pnpm@10.18.3",
   "author": "Biscuit Tin <opensource@biscuitt.in>",
   "license": "MIT",
   "repository": {
@@ -35,7 +35,7 @@
     "dprint": "^0.50.2",
     "eslint": "^9.37.0",
     "eslint-typegen": "^2.3.0",
-    "happy-dom": "^20.0.0",
+    "happy-dom": "^20.0.2",
     "husky": "^9.1.7",
     "jiti": "^2.6.1",
     "lint-staged": "^16.2.4",
