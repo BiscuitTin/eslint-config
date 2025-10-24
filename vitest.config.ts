@@ -64,7 +64,6 @@ export default defineProject({
       test: {
         coverage: {
           provider: 'v8',
-          ignoreEmptyLines: true,
           include: ['packages/**/src/**/*.ts', 'packages/**/src/**/*.tsx'],
           exclude: ['packages/eslint-config/**'],
         },
