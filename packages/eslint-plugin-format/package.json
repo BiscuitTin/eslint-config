@@ -20,16 +20,16 @@
     "dprint"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./define-config-support": "./dist/define-config-support.js",
-    "./rule-options": "./dist/rule-options.js",
-    "./workers/dprint": "./dist/workers/dprint.js",
-    "./workers/prettier": "./dist/workers/prettier.js",
+    ".": "./dist/index.mjs",
+    "./define-config-support": "./dist/define-config-support.mjs",
+    "./rule-options": "./dist/rule-options.mjs",
+    "./workers/dprint": "./dist/workers/dprint.mjs",
+    "./workers/prettier": "./dist/workers/prettier.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "LICENSE",
     "README.md",
@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@dprint/formatter": "^0.4.1",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.1",
     "prettier": "^3.6.2"
   }
 }

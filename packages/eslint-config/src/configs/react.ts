@@ -91,6 +91,7 @@ const configCommonRules: TypedFlatConfigItem = {
 
     // @eslint-react/eslint-plugin - eslint-plugin-react-x
     // https://eslint-react.xyz/docs/rules/overview#x-rules
+    '@eslint-react/jsx-dollar': 'error',
     '@eslint-react/jsx-key-before-spread': 'warn',
     '@eslint-react/jsx-no-comment-textnodes': 'error',
     '@eslint-react/jsx-no-duplicate-props': 'error',

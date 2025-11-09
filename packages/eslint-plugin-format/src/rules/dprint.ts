@@ -15,8 +15,8 @@ import messages from '../utils/messages.js'
 import loc from '../utils/source-location.js'
 import workersDirectory from '../workers-directory.js'
 
-const format = createSyncFn<DprintFormat, string>(
-  path.join(workersDirectory, 'dprint.js'),
+const format = createSyncFn<DprintFormat>(
+  path.join(workersDirectory, 'dprint.mjs'),
 )
 
 const rule: Rule.RuleModule = {

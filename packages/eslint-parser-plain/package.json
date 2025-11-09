@@ -18,12 +18,12 @@
     "eslint-parser-plain"
   ],
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "LICENSE",
     "README.md",
@@ -44,6 +44,6 @@
     }
   },
   "devDependencies": {
-    "eslint": "^9.38.0"
+    "eslint": "^9.39.1"
   }
 }
