@@ -6,13 +6,13 @@ describe('decodeSettings', () => {
   it('should be an empty object when the data is an empty object', () => {
     const data = {}
     const result = decodeSettings(data)
-    expect(result).toEqual({})
+    expect(result).toEqual({ cacheConfigs: true, editorConfig: false })
   })
 
   it('should be an empty object when the data is undefined', () => {
     const data = undefined
     const result = decodeSettings(data)
-    expect(result).toEqual({})
+    expect(result).toEqual({ cacheConfigs: true, editorConfig: false })
   })
 
   it('should throw an error when data is null', () => {
@@ -25,7 +25,7 @@ describe('decodeSettings', () => {
   it('should be an empty object when data does not contain the format', () => {
     const data = { foo: 'bar' }
     const result = decodeSettings(data)
-    expect(result).toEqual({})
+    expect(result).toEqual({ cacheConfigs: true, editorConfig: false })
   })
 
   it('should be an empty object when data.format is an empty object', () => {
@@ -38,7 +38,7 @@ describe('decodeSettings', () => {
   it('should be an empty object when data.format is undefined', () => {
     const data = { format: undefined }
     const result = decodeSettings(data)
-    expect(result).toEqual({})
+    expect(result).toEqual({ cacheConfigs: true, editorConfig: false })
   })
 
   it('should throw an error when data.format is null', () => {

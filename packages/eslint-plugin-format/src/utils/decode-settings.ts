@@ -12,6 +12,8 @@ import { ESLintSettingsSchema, type FormatSettings } from '../schemas/index.js'
 const decodeSettings = memoize(
   function decodeSettings(data: unknown): FormatSettings {
     return {
+      cacheConfigs: true,
+      editorConfig: false,
       ...parse(ESLintSettingsSchema, data).format,
     }
   },

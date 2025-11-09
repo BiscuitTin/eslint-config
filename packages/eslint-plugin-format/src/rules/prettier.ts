@@ -19,8 +19,8 @@ interface ParserError extends SyntaxError {
   loc: AST.SourceLocation
 }
 
-const format = createSyncFn<PrettierFormat, string>(
-  path.join(workersDirectory, 'prettier.js'),
+const format = createSyncFn<PrettierFormat>(
+  path.join(workersDirectory, 'prettier.mjs'),
 )
 
 const rule: Rule.RuleModule = {
