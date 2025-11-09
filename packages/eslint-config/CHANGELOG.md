@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.4...eslint-config-v0.4.5) (2025-11-09)
+
+
+### Features
+
+* add @eslint-react/jsx-dollar rule ([#248](https://github.com/BiscuitTin/eslint-config/issues/248)) ([edefe81](https://github.com/BiscuitTin/eslint-config/commit/edefe81f101f5155103cbcfd5835e6098f72c0e4))
+
 ## [0.4.4](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.3...eslint-config-v0.4.4) (2025-10-17)
 
 
