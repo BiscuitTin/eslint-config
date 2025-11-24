@@ -1,4 +1,4 @@
-import memoize from 'micro-memoize'
+import { memoize } from 'micro-memoize'
 import { parse } from 'valibot'
 
 import { ESLintSettingsSchema, type FormatSettings } from '../schemas/index.js'
@@ -17,7 +17,7 @@ const decodeSettings = memoize(
       ...parse(ESLintSettingsSchema, data).format,
     }
   },
-  { isEqual: (a, b) => a === b },
+  { isKeyItemEqual: (a, b) => a === b },
 )
 
 export default decodeSettings
