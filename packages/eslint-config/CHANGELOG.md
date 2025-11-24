@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.6](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.5...eslint-config-v0.4.6) (2025-11-24)
+
+
+### Features
+
+* change major node version to v24 and update dependencies ([#261](https://github.com/BiscuitTin/eslint-config/issues/261)) ([ce5033f](https://github.com/BiscuitTin/eslint-config/commit/ce5033f5704ec7a14516a9df8375aa81d2a49ecb))
+
 ## [0.4.5](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.4...eslint-config-v0.4.5) (2025-11-09)
 
 
