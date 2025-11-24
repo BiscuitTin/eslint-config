@@ -98,7 +98,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.4.2",
-    "@typescript-eslint/parser": "^8.47.0",
+    "@typescript-eslint/parser": "^8.48.0",
     "dprint": "^0.50.2",
     "eslint": "^9.39.1",
     "tailwindcss": "^4.1.17",
