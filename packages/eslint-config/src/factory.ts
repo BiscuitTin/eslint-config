@@ -58,12 +58,12 @@ interface ESLintConfigOptions {
   typescript?: SharedOptions<OptionsTypeScript> | boolean
   json?: SharedOptions<OptionsExtraFiles> | boolean
   react?: SharedOptions<OptionsReact> | boolean
-  nextjs?: SharedOptions | boolean
+  nextjs?: SharedOptions
   node?: SharedOptions<OptionsNodeJs> | boolean
-  tailwindcss?: SharedOptions<OptionsTailwindCss> | boolean
+  tailwindcss?: SharedOptions<OptionsTailwindCss>
 }
 
-function enabled(options: SharedOptions | boolean | undefined, defaults = false): boolean {
+function enabled(options: SharedOptions | undefined, defaults = false): boolean {
   if (typeof options === 'boolean') return options
   if (options === undefined) return defaults
   if (options.enable) return true
