@@ -217,8 +217,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       micro-memoize:
-        specifier: ^5.0.0
-        version: 5.0.0
+        specifier: ^5.1.1
+        version: 5.1.1
       synckit:
         specifier: ^0.11.11
         version: 0.11.11
@@ -2500,8 +2500,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  micro-memoize@5.0.0:
-    resolution: {integrity: sha512-xNq/OgKy0fcEzqvucdcQ05e20QaJ+I2HQZQAvZpcsE2Tu0IXBuMosxHTy1/6FmsqQbrGLGcLeIktCI+IoZ6wqw==}
+  micro-memoize@5.1.1:
+    resolution: {integrity: sha512-QDwluos8YeMijiKxZGwaV4f4tzj0soS6+xcsJhJ3+4wdEIHMyKbIKVUziebOgWX3e6yiijdoaHo+9tyhbnaWXA==}
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -2743,6 +2743,11 @@ packages:
 
   resolve@1.22.10:
     resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
+    engines: {node: '>= 0.4'}
+    hasBin: true
+
+  resolve@1.22.11:
+    resolution: {integrity: sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==}
     engines: {node: '>= 0.4'}
     hasBin: true
 
@@ -4780,7 +4785,7 @@ snapshots:
     dependencies:
       debug: 3.2.7
       is-core-module: '@nolyfill/is-core-module@1.0.39'
-      resolve: 1.22.10
+      resolve: 1.22.11
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -5527,7 +5532,7 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  micro-memoize@5.0.0:
+  micro-memoize@5.1.1:
     dependencies:
       fast-equals: 5.3.3
       fast-stringify: 4.0.0
@@ -5734,6 +5739,13 @@ snapshots:
       is-core-module: '@nolyfill/is-core-module@1.0.39'
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+
+  resolve@1.22.11:
+    dependencies:
+      is-core-module: '@nolyfill/is-core-module@1.0.39'
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
+    optional: true
 
   restore-cursor@5.1.0:
     dependencies:
