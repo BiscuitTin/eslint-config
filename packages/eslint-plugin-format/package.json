@@ -58,13 +58,13 @@
     "@biscuittin/eslint-parser-plain": "workspace:^",
     "eslint-formatting-reporter": "^0.0.0",
     "find-up-simple": "^1.0.1",
-    "micro-memoize": "^5.0.0",
+    "micro-memoize": "^5.1.1",
     "synckit": "^0.11.11",
     "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@dprint/formatter": "^0.4.1",
     "eslint": "^9.39.1",
-    "prettier": "^3.7.1"
+    "prettier": "^3.7.4"
   }
 }
