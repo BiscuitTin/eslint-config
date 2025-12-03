@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.8](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.7...eslint-config-v0.4.8) (2025-12-03)
+
+
+### Features
+
+* update eslint react plugins and other dependencies ([#275](https://github.com/BiscuitTin/eslint-config/issues/275)) ([cd16967](https://github.com/BiscuitTin/eslint-config/commit/cd16967232f3f94bc45899614d6b74dc06f45d7f))
+
 ## [0.4.7](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.6...eslint-config-v0.4.7) (2025-11-28)
 
 
