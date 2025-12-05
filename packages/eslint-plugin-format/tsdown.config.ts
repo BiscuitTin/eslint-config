@@ -8,7 +8,7 @@ export default defineConfig({
     'define-config-support': 'src/define-config-support.ts',
     'rule-options': 'src/rule-options.ts',
   },
-  attw: true,
+  attw: false,
   clean: true,
   tsconfig: '../../tsconfigs/tsconfig.default.json',
   dts: true,
