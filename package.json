@@ -27,9 +27,9 @@
   "devDependencies": {
     "@arethetypeswrong/core": "^0.18.2",
     "@biscuittin/eslint-config": "workspace:^",
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
-    "@commitlint/types": "^20.0.0",
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@commitlint/types": "^20.2.0",
     "@types/node": "^24.10.1",
     "@vitest/coverage-v8": "^4.0.15",
     "dprint": "^0.50.2",
@@ -41,7 +41,7 @@
     "lint-staged": "^16.2.7",
     "publint": "^0.3.15",
     "tailwindcss": "^4.1.17",
-    "tsdown": "^0.16.8",
+    "tsdown": "^0.17.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.15"
