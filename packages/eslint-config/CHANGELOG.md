@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.9](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.8...eslint-config-v0.4.9) (2025-12-05)
+
+
+### Features
+
+* support nextjs v16 ([#277](https://github.com/BiscuitTin/eslint-config/issues/277)) ([ee2bceb](https://github.com/BiscuitTin/eslint-config/commit/ee2bceb28d598880260f36d08cf854d4a82d0afa))
+
 ## [0.4.8](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.7...eslint-config-v0.4.8) (2025-12-03)
 
 
