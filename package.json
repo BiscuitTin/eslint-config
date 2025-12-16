@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.0",
   "author": "Biscuit Tin <opensource@biscuitt.in>",
   "license": "MIT",
   "repository": {
@@ -41,7 +41,7 @@
     "lint-staged": "^16.2.7",
     "publint": "^0.3.16",
     "tailwindcss": "^4.1.18",
-    "tsdown": "^0.17.4",
+    "tsdown": "^0.18.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.15"
