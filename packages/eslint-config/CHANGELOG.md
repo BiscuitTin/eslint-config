@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.10](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.9...eslint-config-v0.4.10) (2025-12-21)
+
+
+### Features
+
+* upgrade eslint-plugin-perfectionist to v5 ([#290](https://github.com/BiscuitTin/eslint-config/issues/290)) ([887ce06](https://github.com/BiscuitTin/eslint-config/commit/887ce068d84f13385cbdd2c041d3da002e2ed98e))
+
 ## [0.4.9](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.8...eslint-config-v0.4.9) (2025-12-05)
 
 
