@@ -75,16 +75,16 @@ export function imports(options: OptionsTypeScript = {}): TypedFlatConfigItem[] 
         // https://github.com/azat-io/eslint-plugin-perfectionist
         'perfectionist/sort-imports': ['error', {
           groups: [
-            'type',
-            ['builtin', 'external'],
-            'internal-type',
+            ['type-builtin', 'type-external', 'type-subpath'],
+            ['builtin', 'external', 'subpath'],
+            'type-internal',
             'internal',
-            ['parent-type', 'sibling-type', 'index-type'],
+            ['type-parent', 'type-sibling', 'type-index'],
             ['parent', 'sibling', 'index'],
-            'object',
-            'unknown',
+            'style',
+            'import',
           ],
-          tsconfigRootDir,
+          tsconfig: { rootDir: tsconfigRootDir },
           order: 'asc',
           type: 'natural',
         }],
