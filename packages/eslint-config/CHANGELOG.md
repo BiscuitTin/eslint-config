@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.12](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.11...eslint-config-v0.4.12) (2025-12-25)
+
+
+### Bug Fixes
+
+* change jsx-shorthand-boolean rule to never ([#298](https://github.com/BiscuitTin/eslint-config/issues/298)) ([f961019](https://github.com/BiscuitTin/eslint-config/commit/f96101987282d5bbedca36ded16e8a39975a56e5))
+
 ## [0.4.11](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.10...eslint-config-v0.4.11) (2025-12-25)
 
 
