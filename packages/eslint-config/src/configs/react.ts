@@ -213,7 +213,8 @@ const configStylistic: TypedFlatConfigItem = {
     '@eslint-react/prefer-destructuring-assignment': 'error',
     '@eslint-react/prefer-namespace-import': 'warn',
     '@eslint-react/jsx-shorthand-boolean': 'error',
-    '@eslint-react/jsx-shorthand-fragment': 'off',
+    // @ts-expect-error https://www.eslint-react.xyz/docs/rules/jsx-shorthand-fragment
+    '@eslint-react/jsx-shorthand-fragment': -1,
     '@eslint-react/naming-convention/filename': 'off', // ['error', 'kebab-case'], already handled by unicorn
 
     // @stylistic/eslint-plugin
