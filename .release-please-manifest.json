@@ -1,5 +1,5 @@
 {
-  "packages/eslint-config": "0.4.10",
+  "packages/eslint-config": "0.4.11",
   "packages/eslint-parser-plain": "0.0.4",
   "packages/eslint-plugin-format": "0.0.1"
 }
