@@ -197,6 +197,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/naming-convention/context-name': 'warn',
     '@eslint-react/naming-convention/filename': 'off', // stylistic
     '@eslint-react/naming-convention/filename-extension': 'warn',
+    '@eslint-react/naming-convention/ref-name': 'warn',
     '@eslint-react/naming-convention/use-state': 'warn',
   },
 }
