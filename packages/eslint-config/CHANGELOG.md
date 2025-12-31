@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.13](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.12...eslint-config-v0.4.13) (2025-12-31)
+
+
+### Features
+
+* update eslint react plugins and add ref-name rule ([#304](https://github.com/BiscuitTin/eslint-config/issues/304)) ([eb86479](https://github.com/BiscuitTin/eslint-config/commit/eb864790814a1da7e0c97e6666c29748e1cc59e7))
+
 ## [0.4.12](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.11...eslint-config-v0.4.12) (2025-12-25)
 
 
