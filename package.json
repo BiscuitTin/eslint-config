@@ -27,8 +27,8 @@
   "devDependencies": {
     "@arethetypeswrong/core": "^0.18.2",
     "@biscuittin/eslint-config": "workspace:^",
-    "@commitlint/cli": "^20.2.0",
-    "@commitlint/config-conventional": "^20.2.0",
+    "@commitlint/cli": "^20.3.0",
+    "@commitlint/config-conventional": "^20.3.0",
     "@commitlint/types": "^20.2.0",
     "@types/node": "^24.10.4",
     "@vitest/coverage-v8": "^4.0.16",
