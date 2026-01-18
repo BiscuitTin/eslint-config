@@ -41,7 +41,7 @@ export function unicorn(): TypedFlatConfigItem[] {
         'unicorn/filename-case': ['error', {
           cases: { kebabCase: true },
           // Ignore case for specific files
-          ignore: ['README.md', 'LICENSE.md', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md'],
+          ignore: ['README.md', 'LICENSE.md', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'AGENTS.md', 'SKILL.md'],
         }],
       },
     },
