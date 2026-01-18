@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.14](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.13...eslint-config-v0.4.14) (2026-01-18)
+
+
+### Bug Fixes
+
+* ignore AGENTS.md and SKILL.md in unicorn-filename-case rule ([#311](https://github.com/BiscuitTin/eslint-config/issues/311)) ([16faa09](https://github.com/BiscuitTin/eslint-config/commit/16faa094a933099675e6e56e167cb27e0a8c6267))
+
 ## [0.4.13](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.12...eslint-config-v0.4.13) (2025-12-31)
 
 
