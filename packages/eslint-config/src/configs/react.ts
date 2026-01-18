@@ -1,5 +1,6 @@
 import { eslint_plugin_jsx_a11y_minimal as eslintPluginJsxA11y } from '@eslint-sukka/eslint-plugin-react-jsx-a11y'
 import eslintPluginStylistic from '@stylistic/eslint-plugin'
+import eslintPluginPerfectionist from 'eslint-plugin-perfectionist'
 import * as eslintPluginReactCompiler from 'eslint-plugin-react-compiler'
 import eslintPluginReactDom from 'eslint-plugin-react-dom'
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
@@ -17,6 +18,7 @@ import { GLOB_SRC, GLOB_TS, GLOB_TSX } from '../globs.js'
 import { getFlatConfigName, memo } from '../utils/index.js'
 
 const pluginJsxA11y = memo(eslintPluginJsxA11y, 'eslint-plugin-react-jsx-a11y')
+const pluginPerfectionist = memo(eslintPluginPerfectionist, 'eslint-plugin-perfectionist')
 const pluginReact = memo(eslintPluginReactX, 'eslint-plugin-react-x')
 const pluginReactCompiler = memo(eslintPluginReactCompiler, 'eslint-plugin-react-compiler')
 const pluginReactDom = memo(eslintPluginReactDom, 'eslint-plugin-react-dom')
@@ -119,7 +121,6 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-default-props': 'error',
     '@eslint-react/no-direct-mutation-state': 'error',
     '@eslint-react/no-duplicate-key': 'error',
-    '@eslint-react/no-forbidden-props': 'off',
     '@eslint-react/no-forward-ref': 'warn',
     '@eslint-react/no-implicit-key': 'error',
     '@eslint-react/no-leaked-conditional-rendering': 'off', // type checking
@@ -138,6 +139,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-unnecessary-key': 'warn',
     '@eslint-react/no-unnecessary-use-callback': 'error',
     '@eslint-react/no-unnecessary-use-memo': 'error',
+    '@eslint-react/no-unnecessary-use-ref': 'warn',
     '@eslint-react/no-unnecessary-use-prefix': 'error',
     '@eslint-react/no-unsafe-component-will-mount': 'warn',
     '@eslint-react/no-unsafe-component-will-receive-props': 'warn',
@@ -207,6 +209,7 @@ const configStylistic: TypedFlatConfigItem = {
   files,
   plugins: {
     '@stylistic': pluginStylistic,
+    perfectionist: pluginPerfectionist,
   },
   rules: {
     // @eslint-react/eslint-plugin
@@ -245,11 +248,22 @@ const configStylistic: TypedFlatConfigItem = {
       propertyValue: 'parens-new-line',
       return: 'parens-new-line',
     }],
-    '@stylistic/jsx-sort-props': ['error', {
-      callbacksLast: true,
-      shorthandFirst: true,
-      multiline: 'last',
-      reservedFirst: true,
+
+    // eslint-plugin-perfectionist
+    // https://github.com/azat-io/eslint-plugin-perfectionist
+    'perfectionist/sort-jsx-props': ['error', {
+      type: 'natural',
+      groups: [
+        'reserved',
+        'shorthand-prop',
+        'multiline-prop',
+        'callback',
+        'unknown',
+      ],
+      customGroups: [
+        { groupName: 'reserved', elementNamePattern: '^(?:key|ref)$' },
+        { groupName: 'callback', elementNamePattern: '^on.+' },
+      ],
     }],
   },
 }
