@@ -27,8 +27,6 @@
     "./workers/prettier": "./dist/workers/prettier.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
     "LICENSE",
@@ -59,12 +57,12 @@
     "eslint-formatting-reporter": "^0.0.0",
     "find-up-simple": "^1.0.1",
     "micro-memoize": "^5.1.1",
-    "synckit": "^0.11.11",
+    "synckit": "^0.11.12",
     "valibot": "^1.2.0"
   },
   "devDependencies": {
-    "@dprint/formatter": "^0.4.1",
+    "@dprint/formatter": "^0.5.1",
     "eslint": "^9.39.2",
-    "prettier": "^3.7.4"
+    "prettier": "^3.8.0"
   }
 }

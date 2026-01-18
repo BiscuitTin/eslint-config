@@ -1,7 +1,6 @@
 import type { ESLint } from 'eslint'
 
-// @ts-expect-error missing type info
-import eslintPluginESLintComments from '@eslint-community/eslint-plugin-eslint-comments'
+import * as eslintPluginESLintComments from '@eslint-community/eslint-plugin-eslint-comments'
 
 import type { TypedFlatConfigItem } from '../types.js'
 

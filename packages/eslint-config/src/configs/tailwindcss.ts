@@ -29,15 +29,18 @@ export function tailwindcss(options: OptionsTailwindCss = {}): TypedFlatConfigIt
       rules: {
         // eslint-plugin-better-tailwindcss
         // https://github.com/schoero/eslint-plugin-better-tailwindcss
+        'better-tailwindcss/enforce-consistent-line-wrapping': 'off', // Use formatter to handle this
         'better-tailwindcss/enforce-consistent-class-order': 'error',
         'better-tailwindcss/enforce-consistent-variable-syntax': ['error', { syntax: 'variable' }],
         'better-tailwindcss/enforce-consistent-important-position': 'error',
         'better-tailwindcss/enforce-shorthand-classes': 'error',
+        'better-tailwindcss/enforce-canonical-classes': 'error',
         'better-tailwindcss/no-duplicate-classes': 'error',
         'better-tailwindcss/no-deprecated-classes': 'error',
         'better-tailwindcss/no-unnecessary-whitespace': 'error',
-        'better-tailwindcss/no-unregistered-classes': 'error',
+        'better-tailwindcss/no-unknown-classes': 'error',
         'better-tailwindcss/no-conflicting-classes': 'error',
+        'better-tailwindcss/no-restricted-classes': 'off', // Just match the rule list order from the plugin docs
       },
     },
   ]
