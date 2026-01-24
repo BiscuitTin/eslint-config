@@ -1,3 +1,4 @@
+import type { RulesConfig } from '@eslint/core'
 import type { Linter } from 'eslint'
 
 import { FlatConfigComposer, type ResolvableFlatConfig } from 'eslint-flat-config-utils'
@@ -36,7 +37,7 @@ import {
 } from './configs/index.js'
 import { isInEditorEnv } from './utils/index.js'
 
-type UserConfig =
+export type UserConfig =
   | TypedFlatConfigItem
   | TypedFlatConfigItem[]
   | FlatConfigComposer<TypedFlatConfigItem, string>
@@ -92,7 +93,7 @@ function configOptions<T extends SharedOptions>(
 export async function config(
   options?: ESLintConfigOptions,
   ...userConfigs: Awaitable<UserConfig>[]
-) {
+): Promise<Linter.Config<RulesConfig>[]> {
   const configs: Awaitable<TypedFlatConfigItem[]>[] = []
 
   const enableTypeScript = enabled(options?.typescript, isPackageExists('typescript'))
