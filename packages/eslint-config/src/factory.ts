@@ -37,7 +37,7 @@ import {
 } from './configs/index.js'
 import { isInEditorEnv } from './utils/index.js'
 
-export type UserConfig =
+type UserConfig =
   | TypedFlatConfigItem
   | TypedFlatConfigItem[]
   | FlatConfigComposer<TypedFlatConfigItem, string>
