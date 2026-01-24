@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.15](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.14...eslint-config-v0.4.15) (2026-01-24)
+
+
+### Bug Fixes
+
+* update eslint plugins and fix types import ([#313](https://github.com/BiscuitTin/eslint-config/issues/313)) ([fef58c2](https://github.com/BiscuitTin/eslint-config/commit/fef58c299a66bacb53030e7f0721901973c708ec))
+
 ## [0.4.14](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.13...eslint-config-v0.4.14) (2026-01-18)
 
 
