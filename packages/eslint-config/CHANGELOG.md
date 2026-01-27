@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.16](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.15...eslint-config-v0.4.16) (2026-01-27)
+
+
+### Bug Fixes
+
+* change sort-jsx-props group order to match old behavior ([#320](https://github.com/BiscuitTin/eslint-config/issues/320)) ([4691191](https://github.com/BiscuitTin/eslint-config/commit/46911918421d98af1917432cf26342265253b773))
+
 ## [0.4.15](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.14...eslint-config-v0.4.15) (2026-01-24)
 
 
