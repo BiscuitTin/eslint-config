@@ -256,9 +256,9 @@ const configStylistic: TypedFlatConfigItem = {
       groups: [
         'reserved',
         'shorthand-prop',
+        'unknown',
         'multiline-prop',
         'callback',
-        'unknown',
       ],
       customGroups: [
         { groupName: 'reserved', elementNamePattern: '^(?:key|ref)$' },
