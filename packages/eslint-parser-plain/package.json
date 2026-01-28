@@ -1,7 +1,7 @@
 {
   "name": "@biscuittin/eslint-parser-plain",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Parse various types of files with ESLint, a fork of Ray's (@so1ve).",
   "author": "Biscuit Tin <opensource@biscuitt.in>",
   "license": "MIT",
