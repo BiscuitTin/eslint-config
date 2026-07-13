@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.17](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.16...eslint-config-v0.4.17) (2026-07-13)
+
+
+### Features
+
+* update agent skills documentation and dependencies ([#326](https://github.com/BiscuitTin/eslint-config/issues/326)) ([6c63d95](https://github.com/BiscuitTin/eslint-config/commit/6c63d95be157ecb9982c22768d4c510318d3036e))
+
+
+### Bug Fixes
+
+* ignore agent-skills file name case ([#322](https://github.com/BiscuitTin/eslint-config/issues/322)) ([04d9b95](https://github.com/BiscuitTin/eslint-config/commit/04d9b9554aa01fc07886acd61f3416228e341391))
+
 ## [0.4.16](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.15...eslint-config-v0.4.16) (2026-01-27)
 
 
