@@ -1,5 +1,5 @@
 ---
-name: pnpm Overrides
+name: pnpm-overrides
 description: Force specific versions of dependencies including transitive dependencies
 ---
 
@@ -9,74 +9,56 @@ Overrides let you force specific versions of packages, including transitive depe
 
 ## Basic Syntax
 
-Define overrides in `pnpm-workspace.yaml` (recommended) or `package.json`:
+Define overrides in `pnpm-workspace.yaml`. They can only be set at the **root** of the project.
 
-### In pnpm-workspace.yaml (Recommended)
+> The `pnpm.overrides` field in `package.json` is **no longer read** (pnpm no longer reads any settings from `package.json#pnpm`). Move overrides to `pnpm-workspace.yaml`.
 
-```yaml
+```yaml title="pnpm-workspace.yaml"
 packages:
   - 'packages/*'
 
 overrides:
   # Override all versions of a package
   lodash: ^4.17.21
-  
+
   # Override specific version range
   "foo@^1.0.0": ^1.2.3
-  
-  # Override nested dependency
-  "express>cookie": ^0.6.0
-  
+
+  # Override nested dependency (only zoo inside qar@1)
+  "qar@1>zoo": "2"
+
   # Override to different package
   "underscore": "npm:lodash@^4.17.21"
-```
 
-### In package.json
-
-```json
-{
-  "pnpm": {
-    "overrides": {
-      "lodash": "^4.17.21",
-      "foo@^1.0.0": "^1.2.3",
-      "bar@^2.0.0>qux": "^1.0.0"
-    }
-  }
-}
+  # Reference a catalog so the version stays in sync
+  "react": "catalog:"
 ```
 
 ## Override Patterns
 
 ### Override all instances
-
 ```yaml
 overrides:
   lodash: ^4.17.21
 ```
-
 Forces all lodash installations to use ^4.17.21.
 
 ### Override specific parent version
-
 ```yaml
 overrides:
   "foo@^1.0.0": ^1.2.3
 ```
-
 Only override foo when the requested version matches ^1.0.0.
 
 ### Override nested dependency
-
 ```yaml
 overrides:
   "express>cookie": ^0.6.0
   "foo@1.x>bar@^2.0.0>qux": ^1.0.0
 ```
-
 Override cookie only when it's a dependency of express.
 
 ### Replace with different package
-
 ```yaml
 overrides:
   # Replace underscore with lodash
@@ -90,13 +72,25 @@ overrides:
 ```
 
 ### Remove a dependency
-
 ```yaml
 overrides:
   "unwanted-pkg": "-"
+  "foo@1.0.0>bar": "-"   # great for skipping unused optionalDependencies
+```
+The `-` removes the package entirely.
+
+### Override peer dependencies
+
+Overrides also apply to `peerDependencies`:
+
+```yaml title="pnpm-workspace.yaml"
+overrides:
+  "react-dom>react": "18.1.0"
 ```
 
-The `-` removes the package entirely.
+- Semver ranges, `workspace:`, and `catalog:` keep the entry as a peer dependency.
+- Non-range specifiers (`link:`, `file:`) move it into `dependencies`.
+- `-` removes the peer dependency entirely.
 
 ## Common Use Cases
 
@@ -137,16 +131,15 @@ overrides:
 
 ## Hooks Alternative
 
-For more complex scenarios, use `.pnpmfile.cjs`:
+For more complex scenarios, use `.pnpmfile.mjs`:
 
-```js
-// .pnpmfile.cjs
+```js title=".pnpmfile.mjs"
 function readPackage(pkg, context) {
   // Override dependency version
   if (pkg.dependencies?.lodash) {
     pkg.dependencies.lodash = '^4.17.21'
   }
-  
+
   // Add missing peer dependency
   if (pkg.name === 'some-package') {
     pkg.peerDependencies = {
@@ -154,25 +147,32 @@ function readPackage(pkg, context) {
       react: '*'
     }
   }
-  
+
   return pkg
 }
 
-module.exports = {
-  hooks: {
-    readPackage
-  }
+export const hooks = {
+  readPackage
 }
+```
+
+Or extend a manifest declaratively with `packageExtensions` (no JS needed):
+
+```yaml title="pnpm-workspace.yaml"
+packageExtensions:
+  react-redux:
+    peerDependencies:
+      react-dom: '*'
 ```
 
 ## Overrides vs Catalogs
 
-| Feature     | Overrides                               | Catalogs                      |
-| ----------- | --------------------------------------- | ----------------------------- |
-| Affects     | All dependencies (including transitive) | Direct dependencies only      |
-| Usage       | Automatic                               | Explicit `catalog:` reference |
-| Purpose     | Force versions, fix issues              | Version management            |
-| Granularity | Can target specific parents             | Package-wide only             |
+| Feature | Overrides | Catalogs |
+|---------|-----------|----------|
+| Affects | All dependencies (including transitive) | Direct dependencies only |
+| Usage | Automatic | Explicit `catalog:` reference |
+| Purpose | Force versions, fix issues | Version management |
+| Granularity | Can target specific parents | Package-wide only |
 
 ## Debugging
 
@@ -188,6 +188,7 @@ pnpm list lodash --depth=Infinity
 
 <!--
 Source references:
-- https://pnpm.io/package_json#pnpmoverrides
+- https://pnpm.io/settings#overrides
+- https://pnpm.io/settings#packageextensions
 - https://pnpm.io/pnpmfile
 -->

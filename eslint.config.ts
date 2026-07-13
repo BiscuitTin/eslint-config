@@ -4,7 +4,7 @@ import config from './packages/eslint-config/src/index.js'
 
 export default config(
   {
-    ignores: ['.vscode'],
+    ignores: ['.agents', '.vscode', 'skills-lock.json'],
     javascript: {
       env: {
         browser: false,

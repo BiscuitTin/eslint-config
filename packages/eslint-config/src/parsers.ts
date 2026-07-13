@@ -7,7 +7,7 @@ import { parser as parserTypescript } from 'typescript-eslint'
 const parsers: Record<string, Linter.Parser> = {
   parserJsonc: parserJsonc,
   parserPlain: pluginFormat.parserPlain,
-  parserTypescript: parserTypescript as Linter.Parser,
+  parserTypescript: parserTypescript,
 }
 
 export default parsers
