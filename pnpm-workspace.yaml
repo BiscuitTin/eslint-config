@@ -1,2 +1,10 @@
+overrides:
+  'is-core-module': 'npm:@nolyfill/is-core-module@^1'
+  'isarray': 'npm:@nolyfill/isarray@^1'
 packages:
   - packages/*
+allowBuilds:
+  dprint: true
+  esbuild: true
+  unrs-resolver: true
+  ws: false

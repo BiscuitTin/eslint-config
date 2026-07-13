@@ -1,5 +1,5 @@
 ---
-name: Lifecycle Hooks
+name: lifecycle-hooks
 description: beforeEach, afterEach, beforeAll, afterAll, and around hooks
 ---
 
@@ -188,31 +188,30 @@ test.concurrent('concurrent', ({ onTestFinished }) => {
 
 ## Extended Test Hooks
 
-With `test.extend`, hooks are type-aware:
+With `test.extend`, hooks are type-aware and must be called on the extended `test`:
 
 ```ts
-const test = base.extend<{ db: Database }>({
-  db: async ({}, use) => {
+const test = base
+  .extend('db', { scope: 'file' }, async ({}, { onCleanup }) => {
     const db = await createDb()
-    await use(db)
-    await db.close()
-  },
-})
+    onCleanup(() => db.close())
+    return db
+  })
 
-// These hooks know about `db` fixture
-test.beforeEach(({ db }) => {
-  db.seed()
-})
+// Test-level hooks see fixtures
+test.beforeEach(({ db }) => db.seed())
+test.afterEach(({ db }) => db.clear())
 
-test.afterEach(({ db }) => {
-  db.clear()
-})
+// Suite-level hooks (4.1+) can access file/worker-scoped fixtures
+test.beforeAll(({ db }) => db.createUsers())
+test.aroundAll(async (runSuite, { db }) => db.transaction(runSuite))
 ```
+
+Suite-level hooks (`beforeAll`/`afterAll`/`aroundAll`) only see **file/worker-scoped** fixtures, and the **global** `beforeAll`/`afterAll` cannot access custom fixtures — use `test.beforeAll` etc.
 
 ## Hook Execution Order
 
 Default order (stack):
-
 1. `beforeAll` (in order)
 2. `beforeEach` (in order)
 3. Test
@@ -239,7 +238,7 @@ defineConfig({
 - `onTestFinished` always runs, even if test fails
 - Use context hooks for concurrent tests
 
-<!--
+<!-- 
 Source references:
 - https://vitest.dev/api/hooks.html
 -->
