@@ -122,7 +122,7 @@ const configCommonRules: TypedFlatConfigItem = {
     '@eslint-react/no-direct-mutation-state': 'error',
     '@eslint-react/no-duplicate-key': 'error',
     '@eslint-react/no-forward-ref': 'warn',
-    '@eslint-react/no-implicit-key': 'error',
+    '@eslint-react/no-implicit-key': 'off', // type checking
     '@eslint-react/no-leaked-conditional-rendering': 'off', // type checking
     '@eslint-react/no-missing-component-display-name': 'error',
     '@eslint-react/no-missing-context-display-name': 'off',
@@ -282,6 +282,7 @@ const configTypeCheck: TypedFlatConfigItem = {
     '@eslint-react/jsx-no-duplicate-props': 'off',
     '@eslint-react/jsx-uses-react': 'off',
     '@eslint-react/jsx-uses-vars': 'off',
+    '@eslint-react/no-implicit-key': 'error',
     '@eslint-react/no-leaked-conditional-rendering': 'error',
     '@eslint-react/no-unused-props': 'warn',
     '@eslint-react/prefer-read-only-props': 'warn',
