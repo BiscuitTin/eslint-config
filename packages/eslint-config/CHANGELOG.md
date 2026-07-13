@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.18](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.17...eslint-config-v0.4.18) (2026-07-13)
+
+
+### Bug Fixes
+
+* **eslint-config:** scope no-implicit-key to typed files ([#327](https://github.com/BiscuitTin/eslint-config/issues/327)) ([b83efeb](https://github.com/BiscuitTin/eslint-config/commit/b83efebf1e2e7d9121009f9493ec2b6722f1c95e))
+
 ## [0.4.17](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.16...eslint-config-v0.4.17) (2026-07-13)
 
 
