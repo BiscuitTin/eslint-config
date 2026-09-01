@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.19](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.18...eslint-config-v0.4.19) (2026-09-01)
+
+
+### Features
+
+* add Tailwind CSS v4 support ([#333](https://github.com/BiscuitTin/eslint-config/issues/333)) ([ba392e1](https://github.com/BiscuitTin/eslint-config/commit/ba392e13493b339b96c5885c5a1cd1f7f68bbcad))
+
 ## [0.4.18](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.17...eslint-config-v0.4.18) (2026-07-13)
 
 
