@@ -8,5 +8,5 @@ export default config({
   react: { enable: true, stylistic: true, typeCheck: true, reactCompiler: true },
   nextjs: true,
   node: true,
-  tailwindcss: true,
+  tailwindcss: {},
 })

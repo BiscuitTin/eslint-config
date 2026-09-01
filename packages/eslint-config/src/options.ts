@@ -231,7 +231,24 @@ export interface OptionsFormat extends StylisticConfig {
   dprintConfigPath?: string
 }
 
-interface OptionsTailwindCssV4 {
+interface OptionsTailwindCssCommon {
+  /**
+   * Detect custom component classes from the Tailwind CSS configuration.
+   *
+   * @default false
+   */
+  detectComponentClasses?: boolean
+
+  /**
+   * The font size of the `<html>` element in pixels.
+   *
+   * The browser default is 16px. Set this when the project changes the root
+   * font size so arbitrary values can be canonicalized correctly.
+   */
+  rootFontSize?: number
+}
+
+interface OptionsTailwindCssV4 extends OptionsTailwindCssCommon {
   /**
    * The path to the entry file of the css based tailwind config (eg: `src/global.css`).
    * If not specified, the plugin will fall back to the default configuration.
@@ -240,7 +257,7 @@ interface OptionsTailwindCssV4 {
   entryPoint: string
 }
 
-interface OptionsTailwindCssV3 {
+interface OptionsTailwindCssV3 extends OptionsTailwindCssCommon {
   /**
    * The path to the tailwind.config.js file. If not specified, the plugin will try to
    * find it automatically or falls back to the default configuration.
