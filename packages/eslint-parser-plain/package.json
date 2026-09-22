@@ -34,7 +34,7 @@
     "build": "tsdown"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0 || ^10.0.0"
   },
   "peerDependenciesMeta": {
     "eslint": {
@@ -42,6 +42,6 @@
     }
   },
   "devDependencies": {
-    "eslint": "^9.39.5"
+    "eslint": "^10.11.0"
   }
 }

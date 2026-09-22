@@ -8,3 +8,5 @@ allowBuilds:
   esbuild: true
   unrs-resolver: true
   ws: false
+patchedDependencies:
+  eslint-rule-composer@0.3.0: patches/eslint-rule-composer@0.3.0.patch
