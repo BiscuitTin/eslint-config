@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.4...eslint-parser-plain-v0.1.0) (2026-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** upgrade eslint to v10 ([#335](https://github.com/BiscuitTin/eslint-config/issues/335))
+
+### Features
+
+* add @eslint-react/jsx-dollar rule ([#248](https://github.com/BiscuitTin/eslint-config/issues/248)) ([edefe81](https://github.com/BiscuitTin/eslint-config/commit/edefe81f101f5155103cbcfd5835e6098f72c0e4))
+* **deps:** upgrade eslint to v10 ([#335](https://github.com/BiscuitTin/eslint-config/issues/335)) ([b8fe925](https://github.com/BiscuitTin/eslint-config/commit/b8fe925097d196933dc2aee97358a0286d8ed66c))
+* enable eslint react no useless fragment rule ([#182](https://github.com/BiscuitTin/eslint-config/issues/182)) ([ca0ed41](https://github.com/BiscuitTin/eslint-config/commit/ca0ed41f821a0d49c26599028ea5603171a58f8b))
+* support nextjs v16 ([#277](https://github.com/BiscuitTin/eslint-config/issues/277)) ([ee2bceb](https://github.com/BiscuitTin/eslint-config/commit/ee2bceb28d598880260f36d08cf854d4a82d0afa))
+* update agent skills documentation and dependencies ([#326](https://github.com/BiscuitTin/eslint-config/issues/326)) ([6c63d95](https://github.com/BiscuitTin/eslint-config/commit/6c63d95be157ecb9982c22768d4c510318d3036e))
+
 ## [0.0.4](https://github.com/BiscuitTin/eslint-config/compare/eslint-parser-plain-v0.0.3...eslint-parser-plain-v0.0.4) (2025-08-20)
 
 
