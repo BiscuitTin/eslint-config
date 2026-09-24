@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "@dprint/formatter": "^0.4.0",
-    "eslint": "^9.0.0",
+    "eslint": "^9.0.0 || ^10.0.0",
     "prettier": "^3.0.0"
   },
   "peerDependenciesMeta": {
@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@dprint/formatter": "^0.5.1",
-    "eslint": "^9.39.5",
+    "eslint": "^10.11.0",
     "prettier": "^3.9.5"
   }
 }

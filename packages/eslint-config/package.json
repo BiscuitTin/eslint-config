@@ -61,7 +61,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
     "@eslint-sukka/eslint-plugin-react-jsx-a11y": "^8.13.5",
     "@eslint/core": "^1.2.1",
-    "@eslint/js": "^9.39.5",
+    "@eslint/js": "^10.0.1",
     "@eslint/json": "^0.14.0",
     "@next/eslint-plugin-next": "^16.2.10",
     "@package-json/types": "^0.0.12",
@@ -72,7 +72,7 @@
     "eslint-plugin-antfu": "^3.2.3",
     "eslint-plugin-autofix": "^2.2.0",
     "eslint-plugin-better-tailwindcss": "^4.7.0",
-    "eslint-plugin-format": "1.0.1",
+    "eslint-plugin-format": "2.0.1",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-jsonc": "^2.21.1",
     "eslint-plugin-n": "^17.24.0",
@@ -99,7 +99,7 @@
     "@eslint/config-inspector": "^1.5.0",
     "@typescript-eslint/parser": "^8.63.0",
     "dprint": "^0.55.1",
-    "eslint": "^9.39.5",
+    "eslint": "^10.11.0",
     "tailwindcss": "^4.3.2",
     "typescript": "^5.9.3"
   }

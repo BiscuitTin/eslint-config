@@ -1,0 +1,26 @@
+diff --git a/lib/rule-composer.js b/lib/rule-composer.js
+index c6e68ac544032f26fed4b42a886a05b6cf42db06..002555bd3024781b02beb72be2876d09750b00a6 100644
+--- a/lib/rule-composer.js
++++ b/lib/rule-composer.js
+@@ -128,8 +128,8 @@ module.exports = Object.freeze({
+   filterReports(rule, predicate) {
+     return Object.freeze({
+       create(context) {
+-        const filename = context.getFilename();
+-        const sourceCode = context.getSourceCode();
++        const filename = context.filename;
++        const sourceCode = context.sourceCode;
+         const settings = context.settings;
+         const options = context.options;
+         return getRuleCreateFunc(rule)(
+@@ -160,8 +160,8 @@ module.exports = Object.freeze({
+   mapReports(rule, iteratee) {
+     return Object.freeze({
+       create(context) {
+-        const filename = context.getFilename();
+-        const sourceCode = context.getSourceCode();
++        const filename = context.filename;
++        const sourceCode = context.sourceCode;
+         const settings = context.settings;
+         const options = context.options;
+         return getRuleCreateFunc(rule)(
