@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.0](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.19...eslint-config-v0.5.0) (2026-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** upgrade eslint to v10 ([#335](https://github.com/BiscuitTin/eslint-config/issues/335))
+
+### Features
+
+* **deps:** upgrade eslint to v10 ([#335](https://github.com/BiscuitTin/eslint-config/issues/335)) ([b8fe925](https://github.com/BiscuitTin/eslint-config/commit/b8fe925097d196933dc2aee97358a0286d8ed66c))
+
 ## [0.4.19](https://github.com/BiscuitTin/eslint-config/compare/eslint-config-v0.4.18...eslint-config-v0.4.19) (2026-09-01)
 
 
